@@ -1,0 +1,57 @@
+/* ------ START HamburguerMenu ------ */
+
+.menuToggle {
+    margin: 0;
+    height: 22px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.hamburguerMenu,
+.hamburguerMenu::after,
+.hamburguerMenu::before,
+.menuToggle {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+.hamburguerMenu,
+.hamburguerMenu::after,
+.hamburguerMenu::before {
+    z-index: 1;
+    height: 1px;
+}
+
+.hamburguerMenu,
+.menuToggle {
+    right: 60px;
+    top: 60px;
+}
+
+.hamburguerMenu::after {
+    content: '';
+    margin-top: -8px;
+}
+
+.hamburguerMenu::before {
+    content: '';
+    margin-top: 8px;
+}
+
+.menuToggle:checked ~ .hamburguerMenu {
+    background: rgba(255, 255, 255, 0);
+}
+
+.menuToggle:checked ~ .hamburguerMenu::after {
+    margin-top: 0;
+    transform: rotate(-45deg);
+}
+
+.menuToggle:checked ~ .hamburguerMenu::before {
+    margin-top: 0;
+    transform: rotate(45deg);
+}
