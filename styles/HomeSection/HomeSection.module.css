@@ -1,5 +1,27 @@
+@keyframes zoomIn {
+    0% {
+        transform: scale(1,1);
+    }
+    100% {
+        transform: scale(1.1,1.1);
+    }
+}
+
+@keyframes scrollDownWheel {
+    0% {
+        margin-top: 12px;
+        opacity: 1;
+    }
+
+    100% {
+        margin-top: 38px;
+        opacity: 0;
+    }
+}
+
 .background {
     object-fit: cover;
+    animation: zoomIn 5s ease-in-out 2s forwards;
 }
 
 .overlay {
@@ -15,16 +37,25 @@
 
 .title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+    gap: 7px;
+}
+
+.title h1, .title h2 {
+    font-family: 'Lato';
+    font-weight: 100;
+    text-align: center;
 }
 
 .title h1 {
-    font-family: 'Lato';
-    font-size: 5.5em;
-    text-align: center;
-    font-weight: 100;
+    font-size: 5em;
+}
+
+.title h2 {
+    font-size: 1.8em;
 }
 
 .scrollDown {
@@ -32,6 +63,7 @@
     bottom: 40px;
     left: 50%;
     margin-left: -57px;
+    cursor: pointer;
 }
 
 .scrollDown div{
@@ -39,20 +71,19 @@
     height: 55px;
     width: 35px;
     border-radius: 25px; 
-    cursor: pointer;
     margin: 0 auto 10px;
 }
 
 .scrollDown div::before {
     content: '';
-    width: 1px;
-    height: 12px;
+    width: 5px;
+    height: 5px;
     background-color: #fff;
     position: absolute;
-    border-radius: 15px;
+    border-radius: 5px;
     left: 50%;
-    margin-top: 10px;
-    margin-left: -1px;
+    margin-top: 12px;
+    margin-left: -2px;
 }
 
 .scrollDown p {
@@ -60,6 +91,15 @@
     font-family: 'Lato';
     font-weight: 100;
     letter-spacing: 1.5px;
+    transition: all 100ms ease-in;
+}
+
+.scrollDown:hover > div::before {
+    animation: scrollDownWheel 1.5s ease-in-out infinite;
+}
+
+.scrollDown:hover > p {
+    font-weight: bold;
 }
 
 .icons {
