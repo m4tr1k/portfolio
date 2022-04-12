@@ -1,11 +1,18 @@
-import styles from "../../styles/components/ScrollButtons.module.css";
+import { useState } from "react";
+import styles from "../../styles/components/ScrollBullets.module.css";
 
 const ScrollBullets = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className={styles.container}>
       {Array.from({ length: 4 }).map((_, i) => (
         <div
-          className={`${styles.bullet} ${i === 0 ? styles.active : undefined}`}
+          key={i}
+          className={`${styles.bullet} ${
+            i === activeIndex ? styles.active : undefined
+          }`}
+          onClick={() => (i !== activeIndex ? setActiveIndex(i) : undefined)}
         ></div>
       ))}
     </div>
