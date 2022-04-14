@@ -1,22 +1,22 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../styles/HomeSection/HomeSection.module.css";
+import styles from "../styles/sections/HomeSection.module.css";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 import SocialLink from "../components/SocialLink";
 
 const HomeSection = () => {
   return (
-    <section id="#home">
-      <div>
-        <div className={styles.overlay}>
+    <React.Fragment>
+      <section id="home" className={styles.overlay}>
+        <div style={{ height: "100%", position: "relative" }}>
           <div className={styles.title}>
             <h1>Francisco Fernandes</h1>
-            <h2>The Path of a Software Engineer</h2>
+            <h2>My Path as a Software Engineer</h2>
           </div>
           <div className={styles.scrollDown}>
             <div></div>
-            <p>Scroll Down</p>
+            <p>Explore It</p>
           </div>
           <div className={styles.icons}>
             <SocialLink url="https://github.com/m4tr1k" icon={faGithub} />
@@ -31,13 +31,13 @@ const HomeSection = () => {
             />
           </div>
         </div>
-        <Image
-          src="/background.jpg"
-          layout="fill"
-          className={styles.background}
-        />
-      </div>
-    </section>
+      </section>
+      <Image
+        src="/background.jpg"
+        layout="fill"
+        className={styles.background}
+      />
+    </React.Fragment>
   );
 };
 

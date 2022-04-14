@@ -25,44 +25,31 @@
 }
 
 .overlay {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    position: relative;
     background-color: #000000bf;
     z-index: 1;
     color: #fff;
 }
 
 .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     gap: 7px;
 }
 
 .title h1, .title h2 {
-    font-family: 'Lato';
-    font-weight: 100;
     text-align: center;
-}
-
-.title h1 {
-    font-size: 5em;
-}
-
-.title h2 {
-    font-size: 1.8em;
 }
 
 .scrollDown {
     position: absolute;
-    bottom: 40px;
+    bottom: 0;
     left: 50%;
-    margin-left: -57px;
+    transform: translateX(-50%);
     cursor: pointer;
 }
 
@@ -92,6 +79,7 @@
     font-weight: 100;
     letter-spacing: 1.5px;
     transition: all 100ms ease-in;
+    text-align: center;
 }
 
 .scrollDown:hover > div::before {
@@ -104,8 +92,8 @@
 
 .icons {
     position: absolute;
-    bottom: 40px;
-    right: 60px;
+    bottom: 0;
+    right: 0;
     display: flex;
     gap: 15px;
 }

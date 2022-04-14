@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    height: 100%;
+    align-items: center;
+    gap: 6em;
+}
+
+.textContainer h2 {
+    margin: 1em 0 0.3em;
+}
+
+.text {
+    text-align: justify;
+    margin-top: 1em;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+}

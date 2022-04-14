@@ -2,14 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import ScrollBullets from "../components/ScrollBullets";
+import ContactsSection from "../sections/AboutSection";
 import HomeSection from "../sections/HomeSection";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Francisco Fernandes - Portfolio</title>
+        <title>Francisco Fernandes</title>
         <meta
           name="description"
           content="My name is Francisco Fernandes and this is my portfolio"
@@ -22,13 +22,14 @@ const Home: NextPage = () => {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Marvel&family=Quicksand:wght@300&display=swap"
           rel="stylesheet"
         />
       </Head>
       <Navbar />
       <ScrollBullets />
       <HomeSection />
+      <ContactsSection />
     </div>
   );
 };
