@@ -3,8 +3,8 @@ import Head from "next/head";
 import path from "path";
 import Navbar from "../components/Navbar";
 import ScrollBullets from "../components/ScrollBullets";
-import AboutSection from "./sections/AboutSection";
-import HomeSection from "./sections/HomeSection";
+import AboutSection from "../sections/AboutSection";
+import HomeSection from "../sections/HomeSection";
 import { promises as fs } from "fs";
 
 export async function getStaticProps() {

@@ -8,7 +8,7 @@ type Props = {
 
 const SocialLink = (props: Props) => {
   return (
-    <a href={props.url} target="_blank">
+    <a href={props.url} target="_blank" rel="noreferrer">
       <FontAwesomeIcon icon={props.icon} size="lg" />
     </a>
   );

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../../styles/sections/HomeSection.module.css";
+import styles from "../styles/sections/HomeSection.module.css";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
-import SocialLink from "../../components/SocialLink";
-import Section from "../../components/Section";
+import SocialLink from "../components/SocialLink";
+import Section from "../components/Section";
 
 const HomeSection = () => {
   return (

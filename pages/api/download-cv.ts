@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { createReadStream } from "fs";
 import type { NextApiRequest, NextApiResponse } from "next";
 import path from "path";
 
@@ -11,7 +11,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const filePath = path.join(process.cwd(), "public/Francisco_FernandesCV.pdf");
-  const imageBuffer = readFileSync(filePath);
 
   res.setHeader("Content-Type", "application/pdf");
   res.setHeader(
@@ -19,5 +18,6 @@ export default async function handler(
     "attachment; filename=Francisco_FernandesCV.pdf"
   );
 
-  res.send(imageBuffer);
+  var readStream = createReadStream(filePath);
+  readStream.pipe(res);
 }

@@ -1,8 +1,8 @@
-import Skill from "../../components/Skill";
-import styles from "../../styles/sections/AboutSection.module.css";
-import Computer from "../../components/Computer";
+import Skill from "../components/Skill";
+import styles from "../styles/sections/AboutSection.module.css";
+import Computer from "../components/Computer";
 import Image from "next/image";
-import Section from "../../components/Section";
+import Section from "../components/Section";
 
 type Props = {
   imagePaths: string[];
@@ -20,15 +20,15 @@ const AboutSection = (props: Props) => {
             by developing websites, mobile and desktop apps.
             <br></br>
             <br></br>
-            Even though I don't have an academic art background
+            Even though I don&#39;t have an academic art background
             <span style={{ fontStyle: "italic" }}> yet</span>, my goal is to
             always attempt to build the most aesthetically pleasing software
             without compromising performance, security and reliability.
             <br></br>
             <br></br>
-            At the moment, I'm pursuing a master's degree in Software
+            At the moment, I&#39;m pursuing a master&#39;s degree in Software
             Engineering at{" "}
-            <a href="https://www.isep.ipp.pt/" target="_blank">
+            <a href="https://www.isep.ipp.pt/" target="_blank" rel="noreferrer">
               ISEP - Instituto Superior de Engenharia do Porto
             </a>{" "}
             with the goal of becoming a front-end developer.
