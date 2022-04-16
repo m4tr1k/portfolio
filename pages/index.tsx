@@ -1,11 +1,28 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import path from "path";
 import Navbar from "../components/Navbar";
 import ScrollBullets from "../components/ScrollBullets";
-import ContactsSection from "../sections/AboutSection";
-import HomeSection from "../sections/HomeSection";
+import AboutSection from "./sections/AboutSection";
+import HomeSection from "./sections/HomeSection";
+import { promises as fs } from "fs";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const postsDirectory = path.join(process.cwd(), "public/stack");
+  const stackImagePaths = await fs.readdir(postsDirectory);
+
+  return {
+    props: {
+      stackImagePaths,
+    },
+  };
+}
+
+type Props = {
+  stackImagePaths: string[];
+};
+
+const Home: NextPage<Props> = (props: Props) => {
   return (
     <div>
       <Head>
@@ -29,7 +46,7 @@ const Home: NextPage = () => {
       <Navbar />
       <ScrollBullets />
       <HomeSection />
-      <ContactsSection />
+      <AboutSection imagePaths={props.stackImagePaths} />
     </div>
   );
 };

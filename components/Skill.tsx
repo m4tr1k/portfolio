@@ -9,7 +9,7 @@ const Skill = (props: Props) => {
   return (
     <div className={styles.container}>
       <p>{props.name}</p>
-      <div class={styles.circleContainer}>
+      <div className={styles.circleContainer}>
         {Array.from({ length: 10 }).map((_, i) => (
           <div
             key={i}

@@ -1,14 +1,15 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../styles/sections/HomeSection.module.css";
+import styles from "../../styles/sections/HomeSection.module.css";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
-import SocialLink from "../components/SocialLink";
+import SocialLink from "../../components/SocialLink";
+import Section from "../../components/Section";
 
 const HomeSection = () => {
   return (
     <React.Fragment>
-      <section id="home" className={styles.overlay}>
+      <Section className={styles.overlay}>
         <div style={{ height: "100%", position: "relative" }}>
           <div className={styles.title}>
             <h1>Francisco Fernandes</h1>
@@ -24,14 +25,10 @@ const HomeSection = () => {
               url="https://www.linkedin.com/in/franciscofernandes88/"
               icon={faLinkedinIn}
             />
-            <SocialLink
-              name="Email"
-              url="mailto:francisco.joao2000@gmail.com"
-              icon={faAt}
-            />
+            <SocialLink url="mailto:francisco.joao2000@gmail.com" icon={faAt} />
           </div>
         </div>
-      </section>
+      </Section>
       <Image
         src="/background.jpg"
         layout="fill"
