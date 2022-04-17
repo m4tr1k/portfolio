@@ -6,6 +6,9 @@ import ScrollBullets from "../components/ScrollBullets";
 import AboutSection from "../sections/AboutSection";
 import HomeSection from "../sections/HomeSection";
 import { promises as fs } from "fs";
+import ProjectsSection from "../sections/ProjectsSection";
+import ScrollContext from "../context/ScrollContext";
+import { useState } from "react";
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "public/stack");
@@ -23,6 +26,8 @@ type Props = {
 };
 
 const Home: NextPage<Props> = (props: Props) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div>
       <Head>
@@ -44,9 +49,12 @@ const Home: NextPage<Props> = (props: Props) => {
         />
       </Head>
       <Navbar />
-      <ScrollBullets />
-      <HomeSection />
-      <AboutSection imagePaths={props.stackImagePaths} />
+      <ScrollContext.Provider value={{ activeIndex, setActiveIndex }}>
+        <ScrollBullets />
+        <HomeSection />
+        <AboutSection imagePaths={props.stackImagePaths} />
+        <ProjectsSection />
+      </ScrollContext.Provider>
     </div>
   );
 };

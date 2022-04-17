@@ -9,7 +9,7 @@ import Section from "../components/Section";
 const HomeSection = () => {
   return (
     <React.Fragment>
-      <Section className={styles.overlay}>
+      <Section id="0" className={styles.overlay}>
         <div style={{ height: "100%", position: "relative" }}>
           <div className={styles.title}>
             <h1>Francisco Fernandes</h1>

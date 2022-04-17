@@ -10,7 +10,7 @@ type Props = {
 
 const AboutSection = (props: Props) => {
   return (
-    <Section>
+    <Section id="1" color="#321d08">
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <h1>Who Am I?</h1>

@@ -74,6 +74,7 @@
 .pdf {
     padding: .5em;
     gap: 7px;
+    cursor: pointer;
 }
 
 .cv, .pdf {
