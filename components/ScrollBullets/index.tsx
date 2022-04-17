@@ -13,6 +13,11 @@ const ScrollBullets = () => {
           className={`${styles.bullet} ${
             i === activeIndex ? styles.active : undefined
           }`}
+          onClick={() => {
+            document
+              .getElementById(i.toString())
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
         ></div>
       ))}
     </div>

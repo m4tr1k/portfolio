@@ -28,7 +28,7 @@ const Computer = () => {
           <div className={styles.cv}>
             <p>Double tap the icon to download it!</p>
             <div className={styles.pdf} onDoubleClick={downloadCV}>
-              <Image src="/pdf.svg" height={70} width={70} />
+              <Image src="/pdf.svg" height={70} width={70} alt="CV Pdf" />
               <p>MyCV.pdf</p>
             </div>
           </div>
