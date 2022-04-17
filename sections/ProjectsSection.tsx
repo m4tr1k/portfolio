@@ -1,6 +1,5 @@
 import styles from "../styles/sections/ProjectsSection.module.css";
 import Section from "../components/Section";
-import Project from "../components/Project";
 import Image from "next/image";
 
 const ProjectsSection = () => {
