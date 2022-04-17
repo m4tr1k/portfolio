@@ -15,7 +15,14 @@ const HomeSection = () => {
             <h1>Francisco Fernandes</h1>
             <h2>My Path as a Software Engineer</h2>
           </div>
-          <div className={styles.scrollDown}>
+          <div
+            className={styles.scrollDown}
+            onClick={() =>
+              document
+                .getElementById("1")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
             <div></div>
             <p>Explore It</p>
           </div>
