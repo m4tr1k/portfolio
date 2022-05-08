@@ -1,0 +1,36 @@
+.projectContainer {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-items: center;
+    flex-flow: column;
+    flex: 1;
+}
+
+.imageContainer {
+    display: flex;
+}
+
+.descriptionContainer, .controller {
+    display: flex;
+    gap: 10px;
+}
+
+.descriptionContainer {
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.controller, .imageContainer {
+    align-items: center;
+}
+
+.square {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

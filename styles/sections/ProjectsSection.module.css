@@ -5,11 +5,3 @@
 .description {
     margin-top: 0.5em;
 }
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
-    justify-items: center;
-    margin: 4em 0;
-}

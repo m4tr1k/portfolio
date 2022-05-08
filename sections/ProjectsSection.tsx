@@ -1,6 +1,7 @@
 import styles from "../styles/sections/ProjectsSection.module.css";
 import Section from "../components/Section";
 import Image from "next/image";
+import Project from "../components/Project";
 
 const ProjectsSection = () => {
   return (
@@ -9,6 +10,7 @@ const ProjectsSection = () => {
       <p className={styles.description}>
         My highlighted projects, from front-end to back-end
       </p>
+      <Project />
     </Section>
   );
 };
