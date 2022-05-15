@@ -8,18 +8,32 @@
     justify-content: center;
 }
 
+.square:hover:not(.disabled), 
+.square:focus-within:not(.disabled) {
+    background-color: #fff;
+}
+
+.square:hover:not(.disabled) svg, 
+.square:focus-within:not(.disabled) svg {
+    color: #3b6277;
+}
+
 .controller {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.disabled {
-    cursor: not-allowed;
-    border-color: #afafaf
+.square, .disabled {
+    transition: all 0.25s;
 }
 
-.disabled svg {
+.square.disabled {
+    cursor: not-allowed;
+    border-color: #afafaf;
+}
+
+.square.disabled svg {
     color: #afafaf
 }
 

@@ -10,12 +10,22 @@ const Project = () => {
     <div className={styles.projectContainer}>
       <div className={styles.descriptionContainer}>
         <h2>ICBraga Website</h2>
+        <p className={styles.description}>
+          Full-stack project made up of a back-end service to manage doctors,
+          agreements, specialties, consultations and exams, database, a
+          front-end dashboard and a website.<br></br>
+          Logo design made from scratch.
+        </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id
-          velit faucibus massa porttitor tempus faucibus et nunc. Aenean viverra
-          commodo est eu fringilla. Aliquam vitae consequat purus. Morbi id quam
-          sed ipsum bibendum varius et a nisi. Pellentesque euismod volutpat
-          dictum. Nunc vel est malesuada enim accumsan tincidunt.
+          Link:{" "}
+          <a
+            className={styles.link}
+            href="https://icbraga.pt"
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://icbraga.pt
+          </a>
         </p>
         <ProjectController
           setCurrent={setCurrent}
@@ -24,12 +34,14 @@ const Project = () => {
         />
       </div>
       <div className={styles.imageContainer}>
-        <Image
-          src="/projects/macbook.webp"
-          width={960}
-          height={570}
-          layout="fixed"
-        />
+        <div style={{ display: "block", width: "100%" }}>
+          <Image
+            src="/projects/macbook.png"
+            width={2255}
+            height={1260}
+            layout="responsive"
+          />
+        </div>
       </div>
     </div>
   );

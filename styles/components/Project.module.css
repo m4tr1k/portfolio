@@ -1,6 +1,6 @@
 .projectContainer {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     flex-flow: column;
     flex: 1;
@@ -8,19 +8,24 @@
 
 .imageContainer {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .descriptionContainer {
     display: flex;
-    gap: 10px;
-}
-
-.descriptionContainer {
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.3em;
 }
 
-.imageContainer {
-    align-items: center;
+.description {
+    text-align: justify;
+    width: 85%;
+}
+
+.link {
+    text-decoration: underline;
+    color: #fff;
 }
