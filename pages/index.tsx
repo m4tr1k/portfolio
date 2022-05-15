@@ -9,20 +9,27 @@ import { promises as fs } from "fs";
 import ProjectsSection from "../sections/ProjectsSection";
 import ScrollContext from "../context/ScrollContext";
 import { useState } from "react";
+import { readHighlightedProjects } from "../utils/highlighted-projects";
 
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), "public/stack");
-  const stackImagePaths = await fs.readdir(postsDirectory);
+  //Stack Images
+  const stackImageDirectory = path.join(process.cwd(), "public/stack");
+  const stackImagePaths = await fs.readdir(stackImageDirectory);
+
+  //Highlighted Projects
+  const highlightedProjects = await readHighlightedProjects();
 
   return {
     props: {
       stackImagePaths,
+      highlightedProjects,
     },
   };
 }
 
 type Props = {
   stackImagePaths: string[];
+  highlightedProjects: string[];
 };
 
 const Home: NextPage<Props> = (props: Props) => {
@@ -43,7 +50,7 @@ const Home: NextPage<Props> = (props: Props) => {
         <ScrollBullets />
         <HomeSection />
         <AboutSection imagePaths={props.stackImagePaths} />
-        <ProjectsSection />
+        <ProjectsSection projects={props.highlightedProjects} />
       </ScrollContext.Provider>
     </div>
   );

@@ -1,32 +1,35 @@
 import Image from "next/image";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import styles from "../styles/components/Project.module.css";
 import ProjectController from "./ProjectController";
 
-const Project = () => {
+type Props = {
+  list: string[];
+};
+
+const Project = (props: Props) => {
   const [current, setCurrent] = useState(1);
 
   return (
     <div className={styles.projectContainer}>
       <div className={styles.descriptionContainer}>
-        <h2>ICBraga Website</h2>
-        <p className={styles.description}>
-          Full-stack project made up of a back-end service to manage doctors,
-          agreements, specialties, consultations and exams, database, a
-          front-end dashboard and a website.<br></br>
-          Logo design made from scratch.
-        </p>
-        <p>
-          Link:{" "}
-          <a
-            className={styles.link}
-            href="https://icbraga.pt"
-            target="_blank"
-            rel="noreferrer"
-          >
-            https://icbraga.pt
-          </a>
-        </p>
+        <ReactMarkdown
+          components={{
+            h1: "h2",
+            a: ({ node, ...props }) => (
+              <a
+                className={styles.link}
+                href={props.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {props.href}
+              </a>
+            ),
+          }}
+          children={props.list[current - 1]}
+        />
         <ProjectController
           setCurrent={setCurrent}
           current={current}
