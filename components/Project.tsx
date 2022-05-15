@@ -28,8 +28,9 @@ const Project = (props: Props) => {
               </a>
             ),
           }}
-          children={props.list[current - 1]}
-        />
+        >
+          {props.list[current - 1]}
+        </ReactMarkdown>
         <ProjectController
           setCurrent={setCurrent}
           current={current}
@@ -39,6 +40,7 @@ const Project = (props: Props) => {
       <div className={styles.imageContainer}>
         <div style={{ display: "block", width: "100%" }}>
           <Image
+            alt="project image"
             src="/projects/macbook.png"
             width={2255}
             height={1260}
