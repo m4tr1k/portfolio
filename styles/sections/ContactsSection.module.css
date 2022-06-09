@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    position: relative;
+    height: 100%;
+    align-items: center;
+}

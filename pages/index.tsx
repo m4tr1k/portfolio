@@ -10,6 +10,7 @@ import ProjectsSection from "../sections/ProjectsSection";
 import ScrollContext from "../context/ScrollContext";
 import { useState } from "react";
 import { readHighlightedProjects } from "../utils/highlighted-projects";
+import ContactsSection from "../sections/ContactsSection";
 
 export async function getStaticProps() {
   //Stack Images
@@ -51,6 +52,7 @@ const Home: NextPage<Props> = (props: Props) => {
         <HomeSection />
         <AboutSection imagePaths={props.stackImagePaths} />
         <ProjectsSection projects={props.highlightedProjects} />
+        <ContactsSection />
       </ScrollContext.Provider>
     </div>
   );
