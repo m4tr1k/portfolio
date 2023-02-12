@@ -35,6 +35,7 @@ const HomeSection = () => {
         alt="Background Image"
         src="/background.jpg"
         fill
+        priority
         className={styles.backgroundImage}
       />
     </React.Fragment>

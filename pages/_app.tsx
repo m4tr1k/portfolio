@@ -14,15 +14,17 @@ const courgette = Courgette({ weight: "400" });
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const loader = document.getElementById("globalLoader");
-      const main = document.getElementById("main");
-      if (loader && main) {
-        loader.style.display = "none";
-        main.style.animation = "appear 0.4s ease-in-out";
-        main.style.opacity = "1";
+    setTimeout(() => {
+      if (typeof window !== "undefined") {
+        const loader = document.getElementById("globalLoader");
+        const main = document.getElementById("main");
+        if (loader && main) {
+          loader.style.display = "none";
+          main.style.animation = "appear 0.4s ease-in-out";
+          main.style.opacity = "1";
+        }
       }
-    }
+    }, 3000);
   }, []);
 
   return (
