@@ -1,12 +1,3 @@
-@keyframes zoomIn {
-    0% {
-        transform: scale(1,1);
-    }
-    100% {
-        transform: scale(1.02,1.02);
-    }
-}
-
 @keyframes scrollDownWheel {
     0% {
         margin-top: 12px;
@@ -19,81 +10,98 @@
     }
 }
 
-.background {
+.backgroundImage {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
     object-fit: cover;
-    animation: zoomIn 5s ease-in-out 2s forwards;
 }
 
-.overlay {
+.homeSection {
+    background: linear-gradient(180deg, rgba(73, 68, 63, 0.328) 19.6%, rgba(73, 68, 63, 0.116) 100%);
     position: relative;
-    background-color: #292929a6;
     z-index: 1;
-    color: #fff;
+    color: var(--main-color);
+    height: 100vh;
 }
 
-.title {
+.homeSection a {
+    color: var(--main-color);
+}
+
+.homeContent {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+    transform: translateY(-50%);
+    width: 500px;
 }
 
-.title h1, .title h2 {
-    text-align: center;
+.homeContent h1 {
+    font-family: var(--titillium_web-font);
+    font-weight: 200;
+    line-height: 1.15;
+    font-size: 75px;
+}
+
+.homeContent p {
+    font-size: 27px;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background-color: var(--main-color);
+    margin: 1.15em 0 1.25em 0;
 }
 
 .scrollDown {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     cursor: pointer;
+    padding-bottom: inherit;
+}
+
+.scrollDown > *, .photoCredits > * {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .scrollDown div{
-    border: 1px solid #fff;
-    height: 55px;
-    width: 35px;
-    border-radius: 25px; 
-    margin: 0 auto 10px;
+    position: relative;
+    border: 3px solid var(--main-color);
+    height: 50px;
+    width: 30px;
+    border-radius: 25px;
+    margin-right: 1em;
 }
 
 .scrollDown div::before {
     content: '';
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
+    width: 6px;
+    height: 6px;
+    background-color: var(--main-color);
     position: absolute;
-    border-radius: 5px;
+    border-radius: 6px;
     left: 50%;
+    transform: translate(-50%);
     margin-top: 12px;
-    margin-left: -2px;
 }
 
 .scrollDown p {
-    text-transform: uppercase;
-    font-family: 'Lato';
-    font-weight: 100;
-    letter-spacing: 1.5px;
-    transition: all 100ms ease-in;
-    text-align: center;
+    font-size: 22px;
 }
 
 .scrollDown:hover > div::before {
     animation: scrollDownWheel 1.5s ease-in-out infinite;
 }
 
-.scrollDown:hover > p {
-    font-weight: bold;
-}
-
-.icons {
+.photoCredits {
     position: absolute;
     bottom: 0;
     right: 0;
-    display: flex;
-    gap: 15px;
+    padding-bottom: inherit;
+    padding-right: inherit;
+}
+
+.photoCredits p {
+    font-size: 18px;
+    margin-right: .5em;
 }

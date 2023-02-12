@@ -1,13 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  webpack: function (config) {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader",
-    });
-
-    return config;
+  experimental: {
+    fontLoaders: [
+      { loader: "@next/font/google", options: { subsets: ["latin"] } },
+    ],
   },
 };
 

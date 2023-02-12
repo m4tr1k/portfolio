@@ -1,8 +1,25 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    padding: 2em 4em 0;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo {
+    font-family: var(--courgette-font);
+    font-size: 45px;
+    color: var(--main-color);
+    font-weight: 400;
+}
+
 /* ------ START HamburguerMenu ------ */
 
 .menuToggle {
     margin: 0;
-    height: 22px;
     opacity: 0;
     z-index: 2;
 }
@@ -12,34 +29,34 @@
 .hamburguerMenu::before,
 .menuToggle {
     display: block;
-    background-color: #fff;
-    position: absolute;
-    width: 30px;
+    background-color: var(--main-color);
+    width: 34px;
     transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
     cursor: pointer;
+}
+
+.hamburguerMenu::after,
+.hamburguerMenu::before,
+.menuToggle {
+    position: absolute;
 }
 
 .hamburguerMenu,
 .hamburguerMenu::after,
 .hamburguerMenu::before {
     z-index: 1;
-    height: 1px;
-}
-
-.hamburguerMenu,
-.menuToggle {
-    right: 60px;
-    top: 60px;
+    height: 4px;
+    border-radius: 3px;
 }
 
 .hamburguerMenu::after {
     content: '';
-    margin-top: -8px;
+    margin-top: -9px;
 }
 
 .hamburguerMenu::before {
     content: '';
-    margin-top: 8px;
+    margin-top: 9px;
 }
 
 .menuToggle:checked ~ .hamburguerMenu {
