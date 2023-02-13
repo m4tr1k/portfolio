@@ -43,7 +43,7 @@ a {
 
 section {
   width: 100%;
-  padding: 2em 4em;
+  padding: 2em clamp(25px, 5%, 4em);
 }
 
 #main {

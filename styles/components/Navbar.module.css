@@ -1,7 +1,7 @@
 .navbar{
     display: flex;
     flex-direction: row;
-    padding: 2em 4em 0;
+    padding: 2em clamp(25px, 5%, 4em) 0;
     justify-content: space-between;
     align-items: center;
     position: absolute;

@@ -13,13 +13,15 @@
 .backgroundImage {
     transform: matrix(-1, 0, 0, 1, 0, 0);
     object-fit: cover;
+    object-position: clamp(26%, 1vw, 50%);
 }
 
 .homeSection {
-    background: linear-gradient(180deg, rgba(73, 68, 63, 0.328) 19.6%, rgba(73, 68, 63, 0.116) 100%);
+    background: linear-gradient(180deg, rgba(73, 68, 63, 0.45) 39.6%, rgba(73, 68, 63, 0.336) 100%);
     position: relative;
     z-index: 1;
     color: var(--main-color);
+    min-height: 550px;
     height: 100vh;
 }
 
@@ -31,18 +33,18 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 500px;
+    width: 80%;
 }
 
 .homeContent h1 {
     font-family: var(--titillium_web-font);
     font-weight: 200;
     line-height: 1.15;
-    font-size: 75px;
+    font-size: clamp(2.813rem, 1.7785172rem + 4.872414vw, 4.688rem);
 }
 
 .homeContent p {
-    font-size: 27px;
+    font-size: clamp(1.375rem, 1.0342308rem + 0.923846vw, 1.688rem);
 }
 
 .separator {
@@ -52,11 +54,16 @@
     margin: 1.15em 0 1.25em 0;
 }
 
-.scrollDown {
+.bottomBar {
     position: absolute;
     bottom: 0;
-    cursor: pointer;
     padding-bottom: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% - clamp(25px, 5%, 4em));
+    padding-right: inherit;
+    justify-content: space-between;
 }
 
 .scrollDown > *, .photoCredits > * {
@@ -67,10 +74,10 @@
 .scrollDown div{
     position: relative;
     border: 3px solid var(--main-color);
-    height: 50px;
-    width: 30px;
+    height: 42px;
+    width: 27px;
     border-radius: 25px;
-    margin-right: 1em;
+    margin-right: .7em;
 }
 
 .scrollDown div::before {
@@ -86,22 +93,56 @@
 }
 
 .scrollDown p {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .scrollDown:hover > div::before {
     animation: scrollDownWheel 1.5s ease-in-out infinite;
 }
 
-.photoCredits {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding-bottom: inherit;
-    padding-right: inherit;
+.photoCredits p {
+    font-size: 15px;
+    margin-right: .5em;
 }
 
-.photoCredits p {
-    font-size: 18px;
-    margin-right: .5em;
+.photoCredits p span {
+    display: none;
+}
+
+.instagram {
+    font-size: 27px;
+}
+
+@media screen and (min-width: 768px) {
+    .homeContent {
+        width: 500px;
+    }
+
+    .scrollDown div {
+        height: 50px;
+        width: 30px;
+        margin-right: 1em;
+    }
+
+    .scrollDown p {
+        font-size: 22px;
+    }
+
+    .photoCredits p {
+        font-size: 18px;
+    }
+
+    .photoCredits p span {
+        display: inline
+    }
+
+    .instagram {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .backgroundImage{
+        object-position: unset;
+    }
 }
