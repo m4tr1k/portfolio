@@ -1,11 +1,19 @@
-import { ReactNode, useContext } from "react";
+import { CSSProperties, ReactNode, useContext } from "react";
 import { InView } from "react-intersection-observer";
 import ScrollContext from "../context/ScrollContext";
+import styles from "../styles/components/Section.module.css";
+
+type TitleProps = {
+  sectionTitle: string;
+  title: string;
+  position: "left" | "center";
+};
 
 type Props = {
   id: string;
+  titleProps?: TitleProps;
   children: ReactNode;
-  color?: string;
+  style?: CSSProperties;
   className?: string;
 };
 
@@ -23,10 +31,20 @@ const Section = (props: Props) => {
       as="section"
       onChange={(inView) => setVisibleSection(inView)}
       className={props.className}
-      style={{ backgroundColor: props.color }}
+      style={props.style}
       threshold={0.8}
       id={props.id}
     >
+      {props.titleProps ? (
+        <div
+          className={styles.titleContainer}
+          style={{ textAlign: props.titleProps.position }}
+        >
+          <p>{props.titleProps.sectionTitle}</p>
+          <h1>{props.titleProps.title}</h1>
+        </div>
+      ) : undefined}
+
       {props.children}
     </InView>
   );

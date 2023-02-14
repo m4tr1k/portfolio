@@ -1,0 +1,9 @@
+.titleContainer h1 {
+    font-weight: 200;
+    font-family: var(--titillium_web-font);
+}
+
+.titleContainer p {
+    font-weight: bold;
+    font-size: 22px;
+}

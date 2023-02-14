@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import HomeSection from "../sections/HomeSection";
 import ScrollContext from "../context/ScrollContext";
 import { useState } from "react";
+import HighlightedProjectSection from "../sections/HighlightedProjectSection";
 
 type Props = {
   stackImagePaths: string[];
@@ -26,6 +27,7 @@ const Home: NextPage<Props> = (props: Props) => {
       <Navbar />
       <ScrollContext.Provider value={{ activeIndex, setActiveIndex }}>
         <HomeSection />
+        <HighlightedProjectSection />
       </ScrollContext.Provider>
     </div>
   );
