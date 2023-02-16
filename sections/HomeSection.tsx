@@ -25,6 +25,7 @@ const HomeSection = () => {
             className={styles.photoCredits}
             href="https://www.instagram.com/inesandhercamera/"
             target="_blank"
+            rel="noreferrer"
           >
             <p>
               <span>Photo by </span>Inês Basto

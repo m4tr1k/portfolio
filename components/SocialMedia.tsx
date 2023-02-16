@@ -12,7 +12,12 @@ type Props = {
 
 const SocialMedia = (props: Props) => {
   return (
-    <a className={styles.socialMedia} href={props.info.url} target="_blank">
+    <a
+      className={styles.socialMedia}
+      href={props.info.url}
+      target="_blank"
+      rel="noreferrer"
+    >
       <FontAwesomeIcon icon={["fab", props.info.icon as IconName]} size="2x" />
       <p>{props.info.name}</p>
     </a>
