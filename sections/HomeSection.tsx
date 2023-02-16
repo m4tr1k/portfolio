@@ -1,13 +1,12 @@
 import Image from "next/image";
 import styles from "../styles/sections/HomeSection.module.css";
-import Section from "../components/Section";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const HomeSection = () => {
   return (
     <div style={{ position: "relative" }}>
-      <Section id="0" className={styles.homeSection}>
+      <section className={styles.homeSection}>
         <div className={styles.homeContent}>
           <h1>
             Francisco
@@ -33,7 +32,7 @@ const HomeSection = () => {
             <FontAwesomeIcon icon={faInstagram} className={styles.instagram} />
           </a>
         </div>
-      </Section>
+      </section>
       <Image
         alt="Background Image"
         src="/background.jpg"

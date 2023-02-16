@@ -1,9 +1,16 @@
+.section {
+    padding-top: 8.375em;
+    padding-bottom: 8.375em;
+}
+
 .titleContainer h1 {
     font-weight: 200;
     font-family: var(--titillium_web-font);
+    font-size: clamp(50px, 10vw, 80px);
 }
 
 .titleContainer p {
     font-weight: bold;
-    font-size: 22px;
+    font-size: clamp(18px, 3vw, 22px);
 }
+

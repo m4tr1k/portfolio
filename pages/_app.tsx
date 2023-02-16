@@ -1,10 +1,17 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faTwitter,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
 import { useEffect } from "react";
 config.autoAddCss = false;
+
+library.add(faLinkedin, faGithub, faTwitter);
 
 const titillium_web = Titillium_Web({
   weight: "200",

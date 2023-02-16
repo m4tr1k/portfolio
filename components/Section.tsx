@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { InView } from "react-intersection-observer";
 import ScrollContext from "../context/ScrollContext";
 import styles from "../styles/components/Section.module.css";
@@ -13,7 +13,6 @@ type Props = {
   id: string;
   titleProps?: TitleProps;
   children: ReactNode;
-  style?: CSSProperties;
   className?: string;
 };
 
@@ -30,8 +29,7 @@ const Section = (props: Props) => {
     <InView
       as="section"
       onChange={(inView) => setVisibleSection(inView)}
-      className={props.className}
-      style={props.style}
+      className={`${styles.section} ${props.className}`}
       threshold={0.8}
       id={props.id}
     >

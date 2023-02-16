@@ -5,6 +5,7 @@ import HomeSection from "../sections/HomeSection";
 import ScrollContext from "../context/ScrollContext";
 import { useState } from "react";
 import HighlightedProjectSection from "../sections/HighlightedProjectSection";
+import ContactSection from "../sections/ContactSection";
 
 type Props = {
   stackImagePaths: string[];
@@ -28,6 +29,7 @@ const Home: NextPage<Props> = (props: Props) => {
       <ScrollContext.Provider value={{ activeIndex, setActiveIndex }}>
         <HomeSection />
         <HighlightedProjectSection />
+        <ContactSection />
       </ScrollContext.Provider>
     </div>
   );

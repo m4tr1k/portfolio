@@ -25,22 +25,16 @@ html,body,h1,h2,h3,h4,h5,h6,p,ul {
   padding: 0;
 }
 
-h1 {
-  font-size: 5em;
-}
-
-h2 {
-  font-size: 1.91em;
-}
-
 a {
   text-decoration: none;
   cursor: pointer;
+  color: var(--main-color);
 }
 
 section {
   width: 100%;
-  padding: 2em clamp(25px, 5%, 4em);
+  padding-right: clamp(25px, 5%, 4em);
+  padding-left: clamp(25px, 5%, 4em);
 }
 
 #main {
