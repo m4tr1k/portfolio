@@ -37,6 +37,17 @@ section {
   padding-left: clamp(25px, 5%, 4em);
 }
 
+button {
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  padding: .6em 1em;
+  font-size: 1.25em;
+  cursor: pointer;
+  transition: all linear .2s;
+  font-family: var(--cabin-font);
+}
+
 #main {
   opacity: 0;
 }

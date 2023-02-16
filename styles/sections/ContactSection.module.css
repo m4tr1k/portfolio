@@ -14,3 +14,20 @@
 .contacts {
     margin-top: 2.5em;
 }
+
+.contacts > :not(:last-child) {
+    margin-bottom: 1.35em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 40% 55%;
+    grid-gap: 5%;
+}
+
+/* make grid responsive */
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+.form button {
+    float: right;
+}
+
+.form > * {
+    margin-bottom: 2em;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    background-color: #1A153A;
+    border: none;
+    color: var(--main-color);
+    font-family: var(--cabin-font);
+    padding: .6em 1em;
+    font-size: 1.25em;
+}
+
+.form textarea {
+    resize: none;
+    height: 200px;
+}

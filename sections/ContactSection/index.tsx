@@ -1,3 +1,4 @@
+import ContactForm from "../../components/ContactForm";
 import Section from "../../components/Section";
 import SocialMedia from "../../components/SocialMedia";
 import styles from "../../styles/sections/ContactSection.module.css";
@@ -14,20 +15,25 @@ const ContactSection = () => {
       }}
       className={styles.contactSection}
     >
-      <div>
-        <p>
-          Got an interesting idea and want to make it a reality? Just fill out
-          the following form and we’ll keep in touch!
-          <br />
-          <br />
-          Alternatively, you can reach out to me in one of the following social
-          networks, or email me at contact@franciscos.space
-        </p>
-      </div>
-      <div className={styles.contacts}>
-        {contacts.map((contact, index) => {
-          return <SocialMedia info={contact} key={index} />;
-        })}
+      <div className={styles.grid}>
+        <div>
+          <p>
+            Got an interesting idea and want to make it a reality? Just fill out
+            the following form and we’ll keep in touch!
+            <br />
+            <br />
+            Alternatively, you can reach out to me in one of the following
+            social networks, or email me at contact@franciscos.space
+          </p>
+          <div className={styles.contacts}>
+            {contacts.map((contact, index) => {
+              return <SocialMedia info={contact} key={index} />;
+            })}
+          </div>
+        </div>
+        <div className={styles.form}>
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );
