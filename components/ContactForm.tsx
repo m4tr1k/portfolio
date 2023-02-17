@@ -69,7 +69,7 @@ const ContactForm = () => {
         }}
         type="submit"
       >
-        Let's Chat!
+        Let&apos;s Chat!
       </button>
     </form>
   );
