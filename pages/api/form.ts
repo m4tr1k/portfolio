@@ -23,11 +23,9 @@ export default async function handler(
     text: message,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
+  transporter.sendMail(mailOptions, function (error) {
     if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
+      res.status(500).json({ error: error.message });
     }
   });
 
