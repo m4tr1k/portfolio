@@ -7,6 +7,7 @@ export default async function handler(
 ) {
   const body = JSON.parse(req.body);
   const { name, email, message } = body;
+  let errorMessage: string = "";
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -25,11 +26,15 @@ export default async function handler(
 
   transporter.sendMail(mailOptions, function (error) {
     if (error) {
-      res.status(500).json({ error: error.message });
+      errorMessage = error.message;
     }
   });
 
   // Found the name.
   // Sends a HTTP success code
-  res.status(200).json({ data: `Message Sent!` });
+  if (errorMessage !== "") {
+    return res.status(500).json({ error: errorMessage });
+  } else {
+    return res.status(200).json({ data: `Message Sent!` });
+  }
 }
