@@ -52,12 +52,11 @@ button {
   opacity: 0;
 }
 
-#globalLoader {
+.globalLoader {
   position: fixed;
   z-index: 9999;
   top: 50%;
   left: 50%;
-  background-color: var(--main-color);
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
@@ -68,20 +67,8 @@ button {
   transition: all linear 1s;
 }
 
-#globalLoader svg {
-  width: 3.25em;
-  transform-origin: center;
-  animation: rotate4 2s linear infinite;
- }
- 
- #globalLoader circle {
-  fill: none;
-  stroke: #3f2f1f;
-  stroke-width: 2;
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  stroke-linecap: round;
-  animation: dash4 1.5s ease-in-out infinite;
+ .grecaptcha-badge { 
+  visibility: hidden;
  }
 
  @keyframes appear {
@@ -93,26 +80,4 @@ button {
     opacity: 1;
   }
 }
- 
- @keyframes rotate4 {
-  100% {
-   transform: rotate(360deg);
-  }
- }
- 
- @keyframes dash4 {
-  0% {
-   stroke-dasharray: 1, 200;
-   stroke-dashoffset: 0;
-  }
- 
-  50% {
-   stroke-dasharray: 90, 200;
-   stroke-dashoffset: -35px;
-  }
- 
-  100% {
-   stroke-dashoffset: -125px;
-  }
- }
  

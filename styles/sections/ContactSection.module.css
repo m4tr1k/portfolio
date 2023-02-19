@@ -25,7 +25,6 @@
     grid-gap: 5%;
 }
 
-/* make grid responsive */
 @media screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 100%;

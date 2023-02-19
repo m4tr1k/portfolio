@@ -1,7 +1,14 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import styles from "../styles/components/ContactForm.module.css";
+import { useReCaptcha } from "next-recaptcha-v3";
+import ContactButton from "./ContactButton";
 
 const ContactForm = () => {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
+  const { executeRecaptcha } = useReCaptcha();
+
   const inputs = [
     { name: "name", type: "text", placeholder: "Name" },
     { name: "email", type: "email", placeholder: "Email" },
@@ -10,14 +17,18 @@ const ContactForm = () => {
 
   const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setStatus("sending");
+    const token = await executeRecaptcha("contact");
     const formData = new FormData(event.target as HTMLFormElement);
     const data = Object.fromEntries(formData);
     const response = await fetch("/api/form", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, token }),
     });
     if (response.ok) {
-      alert("Message sent successfully!");
+      setStatus("sent");
+    } else {
+      setStatus("error");
     }
 
     inputs.forEach((input) => {
@@ -62,15 +73,7 @@ const ContactForm = () => {
           </div>
         );
       })}
-      <button
-        style={{
-          color: `var(--main-color)`,
-          borderColor: `var(--main-color)`,
-        }}
-        type="submit"
-      >
-        Let&apos;s Chat!
-      </button>
+      <ContactButton status={status} />
     </form>
   );
 };

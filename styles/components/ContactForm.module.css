@@ -1,7 +1,3 @@
-.form button {
-    float: right;
-}
-
 .form > * {
     margin-bottom: 2em;
 }
@@ -15,6 +11,12 @@
     padding: .6em 1em;
     font-size: 1.25em;
 }
+
+.form input:-webkit-autofill, .form input:-webkit-autofill:hover, .form input:-webkit-autofill:focus, .form input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1A153A inset;
+    -webkit-text-fill-color: var(--main-color);
+}
+
 
 .form textarea {
     resize: none;

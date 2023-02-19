@@ -1,0 +1,33 @@
+.sending, .contactButton {
+    display: flex;
+    align-items: center;
+}
+
+.contactButton {
+    gap: 20px;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.sending {
+    font-size: 15px;
+    gap: 10px;
+}
+
+.sending p {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .contactButton {
+        flex-direction: column;
+    }
+
+    .sending {
+        order: 1;
+    }
+
+    .contactButton button {
+        width: 100%;
+    }
+}
