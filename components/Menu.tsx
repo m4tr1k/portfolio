@@ -30,7 +30,7 @@ const Menu = (props: Props) => {
     >
       {menuList.map((item, index) => {
         return (
-          <a href={item.url}>
+          <a key={"item-" + index} href={item.url}>
             <span>0{index + 1}</span> {item.name}
           </a>
         );
