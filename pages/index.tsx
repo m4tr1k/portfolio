@@ -2,18 +2,21 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import HomeSection from "../sections/HomeSection";
-import ScrollContext from "../context/ScrollContext";
 import { useState } from "react";
 import HighlightedProjectSection from "../sections/HighlightedProjectSection";
 import ContactSection from "../sections/ContactSection";
+import Menu from "../components/Menu";
 
-type Props = {
-  stackImagePaths: string[];
-  highlightedProjects: string[];
-};
+const Home: NextPage = () => {
+  const [openMenu, setOpenMenu] = useState(false);
 
-const Home: NextPage<Props> = (props: Props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const toggleMenu = () => {
+    let open = !openMenu;
+    setOpenMenu(open);
+    (document.querySelector(":root") as HTMLElement).style.overflow = open
+      ? "hidden"
+      : "auto";
+  };
 
   return (
     <div>
@@ -25,12 +28,11 @@ const Home: NextPage<Props> = (props: Props) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <ScrollContext.Provider value={{ activeIndex, setActiveIndex }}>
-        <HomeSection />
-        <HighlightedProjectSection />
-        <ContactSection />
-      </ScrollContext.Provider>
+      <Navbar toggleMenu={toggleMenu} />
+      <Menu showMenu={openMenu} />
+      <HomeSection />
+      <HighlightedProjectSection />
+      <ContactSection />
     </div>
   );
 };

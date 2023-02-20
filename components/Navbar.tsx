@@ -1,11 +1,19 @@
 import styles from "../styles/components/Navbar.module.css";
 
-const Navbar = () => {
+type Props = {
+  toggleMenu: () => void;
+};
+
+const Navbar = (props: Props) => {
   return (
     <nav className={styles.navbar}>
       <h1 className={styles.logo}>F.F.</h1>
       <div>
-        <input type="checkbox" className={styles.menuToggle} />
+        <input
+          type="checkbox"
+          onChange={props.toggleMenu}
+          className={styles.menuToggle}
+        />
         <div className={styles.hamburguerMenu}></div>
       </div>
     </nav>
