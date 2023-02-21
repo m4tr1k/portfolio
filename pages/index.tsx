@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar toggleMenu={toggleMenu} />
+      <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
       <Menu showMenu={openMenu} />
       <HomeSection />
       <HighlightedProjectSection />

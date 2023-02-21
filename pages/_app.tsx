@@ -17,7 +17,7 @@ config.autoAddCss = false;
 library.add(faLinkedin, faGithub, faTwitter, faCheck, faXmark);
 
 const titillium_web = Titillium_Web({
-  weight: "200",
+  weight: ["200", "600"],
 });
 const cabin = Cabin();
 const courgette = Courgette({ weight: "400" });

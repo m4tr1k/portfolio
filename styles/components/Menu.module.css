@@ -1,29 +1,59 @@
 .menu {
+    padding: 2em clamp(25px, 5%, 4em);
     height: 100vh;
     position: fixed;
     background-color: var(--third-color);
     width: 100%;
     z-index: 2;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     font-family: var(--titillium_web-font);
     color: var(--main-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
+    visibility: hidden;
 }
 
 .menu.open {
     opacity: 1;
+    visibility: visible;
 }
 
 .menu span {
     font-size: clamp(17px, 4vw, 25px);
 }
 
-.menu a {
+.menuContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.menuContent > * {
+    text-align: center;
+}
+
+.menuContent > *:not(:last-child) {
+    margin-bottom: 1.1em;
+}
+
+.menuContent a {
     font-weight: 200;
     font-size: clamp(45px, 8.5vw, 100px);
+}
+
+.i18n {
+    display: flex;
+    gap: 1em;
+    font-size: clamp(17px, 4vw, 25px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: inherit;
+    padding-bottom: inherit;
+}
+
+.i18n .selected {
+    font-weight: 600;
+    text-decoration: underline;
 }

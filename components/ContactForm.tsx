@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, FormEventHandler, useState } from "react";
 import styles from "../styles/components/ContactForm.module.css";
 import { useReCaptcha } from "next-recaptcha-v3";
 import ContactButton from "./ContactButton";
@@ -15,7 +15,7 @@ const ContactForm = () => {
     { name: "message", type: "textarea", placeholder: "Message" },
   ];
 
-  const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
+  const sendEmail: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
     setStatus("sending");
     const token = await executeRecaptcha("contact");
@@ -30,18 +30,12 @@ const ContactForm = () => {
     } else {
       setStatus("error");
     }
-
-    inputs.forEach((input) => {
-      const element = document.getElementById(input.name) as HTMLFormElement;
-      if (element) {
-        element.value = "";
-      }
-    });
+    (event.target as HTMLFormElement).reset();
   };
 
   return (
     <form
-      onSubmit={(event) => sendEmail(event)}
+      onSubmit={sendEmail}
       name="contact"
       method="POST"
       action="/api/form"
