@@ -34,18 +34,18 @@
 }
 
 .menuContent > *:not(:last-child) {
-    margin-bottom: 1.1em;
+    margin-bottom: 1.5em;
 }
 
 .menuContent a {
     font-weight: 200;
-    font-size: clamp(45px, 8.5vw, 100px);
+    font-size: clamp(45px, 8.5vw, 75px);
 }
 
 .i18n {
     display: flex;
     gap: 1em;
-    font-size: clamp(17px, 4vw, 25px);
+    font-size: clamp(17px, 3vw, 25px);
     position: absolute;
     bottom: 0;
     right: 0;

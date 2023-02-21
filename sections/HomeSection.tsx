@@ -2,8 +2,11 @@ import Image from "next/image";
 import styles from "../styles/sections/HomeSection.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "next-i18next";
 
 const HomeSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <div style={{ position: "relative" }}>
       <section className={styles.homeSection}>
@@ -14,12 +17,12 @@ const HomeSection = () => {
             Fernandes
           </h1>
           <div className={styles.separator} />
-          <p>Explore my path as a software engineer and my newest adventures</p>
+          <p>{t("homepage.description")}</p>
         </div>
         <div className={styles.bottomBar}>
           <div className={styles.scrollDown}>
             <div></div>
-            <p>Take a Look</p>
+            <p>{t("homepage.scrollDown")}</p>
           </div>
           <a
             className={styles.photoCredits}
@@ -28,7 +31,7 @@ const HomeSection = () => {
             rel="noreferrer"
           >
             <p>
-              <span>Photo by </span>Inês Basto
+              <span>{t("homepage.photo")} </span>Inês Basto
             </p>
             <FontAwesomeIcon icon={faInstagram} className={styles.instagram} />
           </a>

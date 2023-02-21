@@ -12,10 +12,13 @@ import { ReCaptchaProvider } from "next-recaptcha-v3";
 import { useEffect } from "react";
 import Spinner from "../components/Spinner";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
-config.autoAddCss = false;
+import { appWithTranslation } from "next-i18next";
 
+//FontAwesome config
+config.autoAddCss = false;
 library.add(faLinkedin, faGithub, faTwitter, faCheck, faXmark);
 
+//Google Fonts config
 const titillium_web = Titillium_Web({
   weight: ["200", "600"],
 });
@@ -58,4 +61,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

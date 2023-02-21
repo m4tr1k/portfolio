@@ -6,6 +6,7 @@ import { useState } from "react";
 import HighlightedProjectSection from "../sections/HighlightedProjectSection";
 import ContactSection from "../sections/ContactSection";
 import Menu from "../components/Menu";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -36,5 +37,13 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+    },
+  };
+}
 
 export default Home;

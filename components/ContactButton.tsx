@@ -2,37 +2,40 @@ import Spinner from "./Spinner";
 import styles from "../styles/components/ContactButton.module.css";
 import { Fragment, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "next-i18next";
 
 type Props = {
   status: "idle" | "sending" | "sent" | "error";
 };
 
 const ContactButton = (props: Props) => {
+  const { t } = useTranslation("home");
+
   const renderStatus = useCallback(() => {
     switch (props.status) {
       case "sending":
         return (
           <Fragment>
             <Spinner color="var(--main-color)" width="1.7em" />
-            <p>Sending...</p>
+            <p>{t("contacts.messageStatus.sending")}</p>
           </Fragment>
         );
       case "sent":
         return (
           <Fragment>
             <FontAwesomeIcon icon={["fas", "check"]} size="lg" />
-            <p>Message sent!</p>
+            <p>{t("contacts.messageStatus.sent")}</p>
           </Fragment>
         );
       case "error":
         return (
           <Fragment>
             <FontAwesomeIcon icon={["fas", "xmark"]} size="lg" />
-            <p>Something went wrong. Try again later!</p>
+            <p>{t("contacts.messageStatus.error")}</p>
           </Fragment>
         );
     }
-  }, [props.status]);
+  }, [props.status, t]);
 
   return (
     <div className={styles.contactButton}>
@@ -46,7 +49,7 @@ const ContactButton = (props: Props) => {
         }}
         type="submit"
       >
-        Let&apos;s Chat!
+        {t("contacts.inputs.submit")}
       </button>
     </div>
   );

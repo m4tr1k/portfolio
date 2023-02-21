@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import ContactForm from "../../components/ContactForm";
 import Section from "../../components/Section";
 import SocialMedia from "../../components/SocialMedia";
@@ -5,26 +6,21 @@ import styles from "../../styles/sections/ContactSection.module.css";
 import contacts from "./contacts.json";
 
 const ContactSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <Section
       id="contact"
       titleProps={{
-        title: "Let's have a Chat",
-        sectionTitle: "Get In Touch",
+        title: t("contacts.title"),
+        sectionTitle: t("contacts.sectionTitle"),
         position: "left",
       }}
       className={styles.contactSection}
     >
       <div className={styles.grid}>
         <div>
-          <p>
-            Got an interesting idea and want to make it a reality? Just fill out
-            the following form and we’ll keep in touch!
-            <br />
-            <br />
-            Alternatively, you can reach out to me in one of the following
-            social networks, or email me at contact@franciscos.space
-          </p>
+          <p className={styles.description}>{t("contacts.description")}</p>
           <div className={styles.contacts}>
             {contacts.map((contact, index) => {
               return <SocialMedia info={contact} key={index} />;

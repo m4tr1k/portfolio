@@ -1,0 +1,27 @@
+{
+    "homepage": {
+        "description": "Explora o meu percurso como engenheiro de software e os meus mais recentes desafios",
+        "photo": "Foto de",
+        "scrollDown": "Vê mais"
+    },
+    "highlighted": {
+        "sectionTitle": "Projetos em Destaque",
+        "title": "Uma Amostra do Meu Trabalho"
+    },
+    "contacts": {
+        "sectionTitle": "Entrar em Contacto",
+        "title": "Vamos Conversar",
+        "description": "Tens uma ideia interessante e queres torná-la realidade? Basta preencheres o formulário e iremos manter contacto!\n\nComo alternativa, podes entrar em contato comigo através de uma das seguintes redes sociais ou enviar um e-mail para contact@ffwork.space",
+        "inputs": {
+            "name": "Nome",
+            "email": "E-mail",
+            "message": "Mensagem",
+            "submit": "Conectar"
+        },
+        "messageStatus": {
+            "sending": "A Enviar...",
+            "sent": "Mensagem enviada!",
+            "error": "Algo correu mal, tenta novamente mais tarde"
+        }
+    }
+}

@@ -25,6 +25,10 @@
     grid-gap: 5%;
 }
 
+.description {
+    white-space: pre-wrap;
+}
+
 @media screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 100%;

@@ -1,18 +1,25 @@
-import { FormEvent, FormEventHandler, useState } from "react";
+import { FormEventHandler, useState } from "react";
 import styles from "../styles/components/ContactForm.module.css";
 import { useReCaptcha } from "next-recaptcha-v3";
 import ContactButton from "./ContactButton";
+import { useTranslation } from "next-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation("home");
+
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
   const { executeRecaptcha } = useReCaptcha();
 
   const inputs = [
-    { name: "name", type: "text", placeholder: "Name" },
-    { name: "email", type: "email", placeholder: "Email" },
-    { name: "message", type: "textarea", placeholder: "Message" },
+    { name: "name", type: "text", placeholder: t("contacts.inputs.name") },
+    { name: "email", type: "email", placeholder: t("contacts.inputs.email") },
+    {
+      name: "message",
+      type: "textarea",
+      placeholder: t("contacts.inputs.message"),
+    },
   ];
 
   const sendEmail: FormEventHandler<HTMLFormElement> = async (event) => {
