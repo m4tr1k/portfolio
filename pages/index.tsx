@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
@@ -7,8 +9,14 @@ import HighlightedProjectSection from "../sections/HighlightedProjectSection";
 import ContactSection from "../sections/ContactSection";
 import Menu from "../components/Menu";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { bundleMDX } from "mdx-bundler";
+import matter from "gray-matter";
 
-const Home: NextPage = () => {
+type Props = {
+  highlightedProjects: string;
+};
+
+const Home: NextPage<Props> = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -32,15 +40,27 @@ const Home: NextPage = () => {
       <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
       <Menu showMenu={openMenu} />
       <HomeSection />
-      <HighlightedProjectSection />
+      <HighlightedProjectSection projects={props.highlightedProjects} />
       <ContactSection />
     </div>
   );
 };
 
 export async function getStaticProps({ locale }: any) {
+  const pathFile = path.join(
+    process.cwd(),
+    "public/projects/highlighted-projects.mdx"
+  );
+  const source = fs.readFileSync(pathFile, "utf8");
+  const { data, content } = matter(source);
+
+  const { code: highlightedProjects } = await bundleMDX({
+    source: content,
+  });
+
   return {
     props: {
+      highlightedProjects,
       ...(await serverSideTranslations(locale, ["home"])),
     },
   };

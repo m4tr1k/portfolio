@@ -7,10 +7,6 @@
     margin-bottom: .27em;
 }
 
-.contactSection p {
-    font-size: clamp(18px, 3vw, 20px);
-}
-
 .contacts {
     margin-top: 2.5em;
 }

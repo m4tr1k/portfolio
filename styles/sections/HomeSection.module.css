@@ -34,13 +34,6 @@
     width: 80%;
 }
 
-.homeContent h1 {
-    font-family: var(--titillium_web-font);
-    font-weight: 200;
-    line-height: 1.15;
-    font-size: clamp(2.813rem, 1.7785172rem + 4.872414vw, 4.688rem);
-}
-
 .homeContent p {
     font-size: clamp(1.375rem, 1.0342308rem + 0.923846vw, 1.688rem);
 }
