@@ -2,6 +2,7 @@ import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
 import Section from "../components/Section";
 import { getMDXComponent } from "mdx-bundler/client";
+import MDXImage from "../components/MDXImage";
 
 type Props = {
   projects: string;
@@ -24,7 +25,11 @@ const HighlightedProjectSection = (props: Props) => {
         sectionTitle: t("highlighted.sectionTitle"),
       }}
     >
-      <Component />
+      <Component
+        components={{
+          img: MDXImage as React.ComponentType,
+        }}
+      />
     </Section>
   );
 };

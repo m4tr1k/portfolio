@@ -11,6 +11,8 @@ import Menu from "../components/Menu";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { bundleMDX } from "mdx-bundler";
 import matter from "gray-matter";
+import remarkMdxImages from "remark-mdx-images";
+import imageMetadata from "../utils/image-metadata";
 
 type Props = {
   highlightedProjects: string;
@@ -52,10 +54,18 @@ export async function getStaticProps({ locale }: any) {
     "public/projects/highlighted-projects.mdx"
   );
   const source = fs.readFileSync(pathFile, "utf8");
-  const { data, content } = matter(source);
+  const { content } = matter(source);
 
   const { code: highlightedProjects } = await bundleMDX({
     source: content,
+    mdxOptions(options) {
+      options.remarkPlugins = [
+        ...(options.remarkPlugins ?? []),
+        remarkMdxImages,
+      ];
+      options.rehypePlugins = [...(options.rehypePlugins ?? []), imageMetadata];
+      return options;
+    },
   });
 
   return {

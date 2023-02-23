@@ -17,6 +17,7 @@
     "esbuild": "^0.17.10",
     "gray-matter": "^4.0.3",
     "i18next": "^22.4.10",
+    "image-size": "^1.0.2",
     "mdx-bundler": "^9.2.1",
     "next": "^13.1.6",
     "next-i18next": "^13.1.5",
@@ -26,7 +27,9 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.5",
     "react-intersection-observer": "^8.34.0",
-    "sharp": "^0.31.3"
+    "remark-mdx-images": "^2.0.0",
+    "sharp": "^0.31.3",
+    "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.5",
