@@ -1,8 +1,9 @@
+import styles from "../styles/sections/HighlightedProjectSection.module.css";
 import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
 import Section from "../components/Section";
 import { getMDXComponent } from "mdx-bundler/client";
-import MDXImage from "../components/MDXImage";
+import { Link, Image } from "../components/MDX";
 
 type Props = {
   projects: string;
@@ -27,7 +28,8 @@ const HighlightedProjectSection = (props: Props) => {
     >
       <Component
         components={{
-          img: MDXImage as React.ComponentType,
+          img: Image as React.ComponentType,
+          a: Link as React.ComponentType,
         }}
       />
     </Section>

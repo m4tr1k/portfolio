@@ -51,7 +51,7 @@ const Home: NextPage<Props> = (props) => {
 export async function getStaticProps({ locale }: any) {
   const pathFile = path.join(
     process.cwd(),
-    "public/projects/highlighted-projects.mdx"
+    `public/projects/${locale}/highlighted-projects.mdx`
   );
   const source = fs.readFileSync(pathFile, "utf8");
   const { content } = matter(source);
@@ -71,7 +71,7 @@ export async function getStaticProps({ locale }: any) {
   return {
     props: {
       highlightedProjects,
-      ...(await serverSideTranslations(locale, ["home"])),
+      ...(await serverSideTranslations(locale, ["home", "menu"])),
     },
   };
 }

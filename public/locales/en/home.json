@@ -6,7 +6,9 @@
     },
     "highlighted": {
         "sectionTitle": "Highlighted Projects",
-        "title": "A Glimpse of My Work"
+        "title": "A Glimpse of My Work",
+        "curious": "Got Curious?",
+        "allProjects": "See All Projects"
     },
     "contacts": {
         "sectionTitle": "Get In Touch",

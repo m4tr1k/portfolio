@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NextImage from "next/image";
 
 type Props = {
   src: string;
@@ -7,9 +7,9 @@ type Props = {
   width: number;
 };
 
-const MDXImage = (props: Props) => {
+const Image = (props: Props) => {
   return (
-    <Image
+    <NextImage
       src={props.src}
       alt={props.alt}
       width={props.width}
@@ -22,4 +22,4 @@ const MDXImage = (props: Props) => {
   );
 };
 
-export default MDXImage;
+export default Image;

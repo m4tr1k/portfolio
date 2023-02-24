@@ -1,29 +1,31 @@
 import styles from "../styles/components/Menu.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 type Props = {
   showMenu: boolean;
 };
 
 const Menu = (props: Props) => {
+  const { t } = useTranslation("menu");
   const { locale } = useRouter();
 
   const menuList = [
     {
-      name: "About",
+      name: t("about"),
       url: "/about",
     },
     {
-      name: "Portfolio",
+      name: t("portfolio"),
       url: "/portfolio",
     },
     {
-      name: "Blog",
+      name: t("blog"),
       url: "/blog",
     },
     {
-      name: "Contact",
+      name: t("contact"),
       url: "/contact",
     },
   ];
@@ -44,7 +46,7 @@ const Menu = (props: Props) => {
         })}
       </div>
       <div className={styles.i18n}>
-        {["en", "pt"].map((lang, index) => {
+        {["en", "pt"].map((lang) => {
           return (
             <Link
               href={"/"}

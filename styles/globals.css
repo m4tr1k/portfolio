@@ -44,7 +44,7 @@ h2 {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: var(--main-color);
+  color: inherit;
 }
 
 section {
@@ -111,16 +111,21 @@ p {
   align-items: center;
 }
 
+.project-description div:first-child {
+  margin-bottom: 2em;
+}
+
+.project-description div:first-child p {
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
 .project-grid-container .project-description {
   padding: 0 clamp(25px, 5%, 4em);
 }
 
-.project-grid-container .project-description > :not(*:last-child) {
-  margin-bottom: .5em;
-}
-
 .project-grid-container .project-description button {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .mdx-image {
@@ -141,4 +146,6 @@ p {
     max-width: 700px;
   }
 }
+
+/* END OF STYLES FOR MDX */
  
