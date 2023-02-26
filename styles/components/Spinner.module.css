@@ -1,5 +1,5 @@
 .spinner {
-    width: 3.25em;
+    width: 3em;
     transform-origin: center;
     animation: rotate4 2s linear infinite;
 }

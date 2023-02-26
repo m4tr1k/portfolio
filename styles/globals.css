@@ -83,6 +83,8 @@ p {
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
+  gap: 1em;
   opacity: 1;
   transition: all linear 1s;
 }
