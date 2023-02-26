@@ -9,7 +9,7 @@ type Props = {
 
 const Menu = (props: Props) => {
   const { t } = useTranslation("menu");
-  const { locale } = useRouter();
+  const { locale, pathname } = useRouter();
 
   const menuList = [
     {
@@ -24,10 +24,6 @@ const Menu = (props: Props) => {
       name: t("blog"),
       url: "/blog",
     },
-    {
-      name: t("contact"),
-      url: "/contact",
-    },
   ];
 
   return (
@@ -37,11 +33,14 @@ const Menu = (props: Props) => {
       <div className={styles.menuContent}>
         {menuList.map((item, index) => {
           return (
-            <div key={"item-" + index}>
-              <Link href={item.url}>
-                <span>0{index + 1}</span> {item.name}
-              </Link>
-            </div>
+            <Link
+              href={item.url}
+              key={"item-" + index}
+              className={item.url === pathname ? styles.active : undefined}
+            >
+              <span>0{index + 1}</span>
+              <h1>{item.name}</h1>
+            </Link>
           );
         })}
       </div>

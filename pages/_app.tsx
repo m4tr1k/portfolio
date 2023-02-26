@@ -29,13 +29,15 @@ if (typeof window !== "undefined") {
   window.addEventListener("load", () =>
     setTimeout(() => {
       const loader = document.querySelector(".globalLoader") as HTMLElement;
+      const root = document.querySelector(":root") as HTMLElement;
       const main = document.getElementById("main");
       if (loader && main) {
         loader.style.display = "none";
         main.style.animation = "appear 0.4s ease-in-out";
         main.style.opacity = "1";
+        root.style.overflow = "scroll";
       }
-    }, 3000)
+    }, 1000)
   );
 }
 
