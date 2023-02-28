@@ -24,18 +24,15 @@ const Home: NextPage<Props> = (props) => {
   const toggleMenu = () => {
     let open = !openMenu;
     setOpenMenu(open);
-    (document.querySelector(":root") as HTMLElement).style.overflow = open
-      ? "hidden"
-      : "auto";
   };
 
   return (
     <div>
       <Head>
-        <title>Francisco Fernandes</title>
+        <title>Francisco Fernandes' Workspace</title>
         <meta
           name="description"
-          content="My name is Francisco Fernandes and this is my web portfolio"
+          content="My name is Francisco Fernandes, a frontend software engineer, and this is my web workspace. Explore my projects, read my blog, and get in touch with me."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -1,0 +1,6 @@
+.logo {
+    font-family: var(--courgette-font);
+    font-size: 45px;
+    color: var(--main-color);
+    font-weight: 400;
+}

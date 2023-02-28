@@ -131,9 +131,25 @@ p {
 }
 
 .mdx-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mdx.project-grid-container:nth-of-type(2n) {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.mdx.project-grid-container:nth-of-type(2n+1) {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.mdx.project-grid-container.show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all ease-in-out .4s;
 }
 
 @media screen and (max-width: 1200px) {

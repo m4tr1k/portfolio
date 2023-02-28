@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import styles from "../styles/components/Navbar.module.css";
+import Logo from "./Logo";
 
 type Props = {
   toggleMenu: () => void;
@@ -17,8 +18,11 @@ const Navbar = (props: Props) => {
   }, [props, router.events]);
 
   return (
-    <nav className={styles.navbar}>
-      <h1 className={styles.logo}>F.F.</h1>
+    <nav
+      className={styles.navbar}
+      style={{ position: props.openMenu ? "fixed" : "absolute" }}
+    >
+      <Logo inHome={router.pathname === "/"} />
       <div>
         <input
           checked={props.openMenu}

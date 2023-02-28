@@ -1,4 +1,3 @@
-import styles from "../styles/sections/HighlightedProjectSection.module.css";
 import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
 import Section from "../components/Section";
