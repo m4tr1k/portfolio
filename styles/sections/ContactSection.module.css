@@ -25,6 +25,17 @@
     white-space: pre-wrap;
 }
 
+.hide {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all ease-in-out .4s;
+}
+
 @media screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 100%;

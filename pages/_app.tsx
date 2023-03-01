@@ -32,6 +32,7 @@ if (typeof window !== "undefined") {
       const root = document.querySelector(":root") as HTMLElement;
       const main = document.getElementById("main");
       if (loader && main) {
+        window.scrollTo(0, 0);
         loader.style.display = "none";
         main.style.animation = "appear 0.4s ease-in-out";
         main.style.opacity = "1";

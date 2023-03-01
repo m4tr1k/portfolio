@@ -17,6 +17,7 @@ const ContactSection = () => {
         position: "left",
       }}
       className={styles.contactSection}
+      animate={{ showClass: styles.show, hideClass: styles.hide }}
     >
       <div className={styles.grid}>
         <div>
