@@ -9,20 +9,22 @@ type Props = {
 };
 
 const Navbar = (props: Props) => {
-  const router = useRouter();
+  const { events, pathname } = useRouter();
 
   useEffect(() => {
-    router.events.on("routeChangeStart", () => {
-      props.toggleMenu();
+    events.on("routeChangeStart", () => {
+      if (props.openMenu) {
+        props.toggleMenu();
+      }
     });
-  }, [props, router.events]);
+  }, [props, events]);
 
   return (
     <nav
       className={styles.navbar}
       style={{ position: props.openMenu ? "fixed" : "absolute" }}
     >
-      <Logo inHome={router.pathname === "/"} />
+      <Logo inHome={pathname === "/"} />
       <div>
         <input
           checked={props.openMenu}

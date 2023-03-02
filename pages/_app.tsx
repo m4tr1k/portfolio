@@ -12,6 +12,9 @@ import { ReCaptchaProvider } from "next-recaptcha-v3";
 import Spinner from "../components/Spinner";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
+import Navbar from "../components/Navbar";
+import Menu from "../components/Menu";
+import { useState } from "react";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -43,6 +46,13 @@ if (typeof window !== "undefined") {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    let open = !openMenu;
+    setOpenMenu(open);
+  };
+
   return (
     <>
       <style jsx global>{`
@@ -58,6 +68,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <p>Loading...</p>
         </div>
         <main id="main">
+          <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
+          <Menu showMenu={openMenu} />
           <Component {...pageProps} />
         </main>
       </ReCaptchaProvider>

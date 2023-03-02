@@ -48,7 +48,7 @@ const Menu = (props: Props) => {
         {["en", "pt"].map((lang) => {
           return (
             <Link
-              href={"/"}
+              href={pathname}
               className={locale === lang ? styles.selected : undefined}
               key={lang}
               locale={lang}
