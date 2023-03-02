@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
 import styles from "../styles/components/Section.module.css";
-import IntersectionObserver from "./IntersectionObserver";
+import Container from "./Container";
 
 type TitleProps = {
   sectionTitle: string;
   title: string;
   position: "left" | "center";
+  description?: string;
 };
 
 type Props = {
@@ -19,18 +20,23 @@ type Props = {
 const Section = (props: Props) => {
   return (
     <section className={`${styles.section} ${props.className}`} id={props.id}>
-      <IntersectionObserver observe={props.animate}>
+      <Container observe={props.animate}>
         {props.titleProps ? (
           <div
             className={styles.titleContainer}
             style={{ textAlign: props.titleProps.position }}
           >
-            <p>{props.titleProps.sectionTitle}</p>
+            <p className={styles.title}>{props.titleProps.sectionTitle}</p>
             <h1>{props.titleProps.title}</h1>
+            {props.titleProps.description ? (
+              <p className={styles.description}>
+                {props.titleProps.description}
+              </p>
+            ) : undefined}
           </div>
         ) : undefined}
         {props.children}
-      </IntersectionObserver>
+      </Container>
     </section>
   );
 };

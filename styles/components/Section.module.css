@@ -3,8 +3,12 @@
     padding-bottom: 8.375em;
 }
 
-.titleContainer p {
+.titleContainer .title {
     font-weight: bold;
     font-size: clamp(18px, 3vw, 22px);
+}
+
+.titleContainer .description{
+    margin-top: 1em;
 }
 

@@ -1,6 +1,6 @@
-import ProjectGrid from '../components/ProjectGrid';
+import Container from '../components/Container';
 
-<ProjectGrid>
+<Container threshold={0.7} observe={{showClass: "show", hideClass: "mdx project-grid-container"}}>
     <div className="project-image">
         <a href="https://icbraga.pt" target="_blank" rel="noreferrer">![ICBraga Website](/projects/icbraga-highlight.png)</a>
     </div>
@@ -8,7 +8,7 @@ import ProjectGrid from '../components/ProjectGrid';
         <div>
             Full Stack &#x2022; SvelteKit &#x2022; Website
 
-            <h2>[ICBraga Website](https://icbraga.pt)</h2>
+            <h2>ICBraga Website</h2>
         </div>
 
         Website refurbishment to match the clinic’s image. Website allows the users to see the clinic’s specialties, consultations, exams, doctors and agreements. It also allows for appointment registration.<br/>
@@ -16,14 +16,14 @@ import ProjectGrid from '../components/ProjectGrid';
 
         <button>View Study Case</button>
     </div>
-</ProjectGrid>
+</Container>
 
-<ProjectGrid>
+<Container threshold={0.7} observe={{showClass: "show", hideClass: "mdx project-grid-container"}}>
     <div className="project-description">
         <div>
             Frontend &#x2022; React Native &#x2022; Mobile
 
-            <h2>[SPZN App](https://www.spzn.pt/pt/noticias/go/app-spzn)</h2>
+            <h2>SPZN App</h2>
         </div>
 
         Cross-platform mobile application available for both iOS and Android. It allows the users to search for news, events and useful links about Sindicato dos Professores da Zona Norte. News and events are retrieved from the server's API.
@@ -33,4 +33,4 @@ import ProjectGrid from '../components/ProjectGrid';
     <div className="project-image">
          <a href="https://www.spzn.pt/pt/noticias/go/app-spzn" target="_blank" rel="noreferrer">![SPZN Application](/projects/spzn-highlight.png)</a>
     </div>
-</ProjectGrid>
+</Container>

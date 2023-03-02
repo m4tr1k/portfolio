@@ -6,12 +6,13 @@ type Props = {
     showClass: string;
     hideClass: string;
   };
+  threshold?: number;
 };
 
-const IntersectionObserver = (props: Props) => {
+const Container = (props: Props) => {
   if (props.observe) {
     return (
-      <InView threshold={0.5} triggerOnce>
+      <InView threshold={props.threshold ? props.threshold : 0.3} triggerOnce>
         {({ inView, ref }) => (
           <div
             ref={ref}
@@ -29,4 +30,4 @@ const IntersectionObserver = (props: Props) => {
   }
 };
 
-export default IntersectionObserver;
+export default Container;

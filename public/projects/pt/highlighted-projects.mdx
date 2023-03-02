@@ -1,6 +1,6 @@
-import ProjectGrid from '../components/ProjectGrid';
+import Container from '../components/Container';
 
-<ProjectGrid>
+<Container threshold={0.7} observe={{showClass: "show", hideClass: "mdx project-grid-container"}}>
     <div className="project-image">
         <a href="https://icbraga.pt" target="_blank" rel="noreferrer">![ICBraga Website](/projects/icbraga-highlight.png)</a>
     </div>
@@ -8,7 +8,7 @@ import ProjectGrid from '../components/ProjectGrid';
         <div>
             Full Stack &#x2022; SvelteKit &#x2022; Website
 
-            <h2>[Website do ICBraga](https://icbraga.pt)</h2>
+            <h2>Website do ICBraga</h2>
         </div>
 
        Revitalização do website para alinhar com a imagem da clínica, apresentando informações sobre as suas especialidades, consultas, exames, médicos e acordos. Também permite o registo de marcações.<br/>
@@ -16,14 +16,14 @@ import ProjectGrid from '../components/ProjectGrid';
 
         <button>Ver Caso de Estudo</button>
     </div>
-</ProjectGrid>
+</Container>
 
-<ProjectGrid>
+<Container threshold={0.7} observe={{showClass: "show", hideClass: "mdx project-grid-container"}}>
     <div className="project-description">
         <div>
             Frontend &#x2022; React Native &#x2022; Aplicação Móvel
 
-            <h2>[Aplicação do SPZN](https://www.spzn.pt/pt/noticias/go/app-spzn)</h2>
+            <h2>Aplicação do SPZN</h2>
         </div>       
 
         Disponível para iOS e Android, a aplicação móvel cross-platform permite aos utilizadores procurar notícias, eventos e links úteis sobre o Sindicato dos Professores da Zona Norte. As informações são obtidas a partir da API do servidor, garantindo atualização constante do conteúdo.
@@ -33,4 +33,4 @@ import ProjectGrid from '../components/ProjectGrid';
     <div className="project-image">
          <a href="https://www.spzn.pt/pt/noticias/go/app-spzn" target="_blank" rel="noreferrer">![SPZN Application](/projects/spzn-highlight.png)</a>
     </div>
-</ProjectGrid>
+</Container>

@@ -23,6 +23,7 @@ const HighlightedProjectSection = (props: Props) => {
         position: "center",
         title: t("highlighted.title"),
         sectionTitle: t("highlighted.sectionTitle"),
+        description: t("highlighted.description") as string,
       }}
     >
       <Component
