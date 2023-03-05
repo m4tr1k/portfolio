@@ -14,7 +14,13 @@ import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import {
+  initialAnimation,
+  pageTransitionAnimationEnd,
+  pageTransitionAnimationStart,
+} from "../utils/animations";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -29,29 +35,26 @@ const cabin = Cabin({ display: "swap" });
 const courgette = Courgette({ weight: "400", display: "swap" });
 
 if (typeof window !== "undefined") {
-  window.addEventListener("load", () =>
-    setTimeout(() => {
-      const loader = document.querySelector(".globalLoader") as HTMLElement;
-      const root = document.querySelector(":root") as HTMLElement;
-      const main = document.getElementById("main");
-      if (loader && main) {
-        window.scrollTo(0, 0);
-        loader.style.display = "none";
-        main.style.animation = "appear 0.4s ease-in-out";
-        main.style.opacity = "1";
-        root.style.overflow = "scroll";
-      }
-    }, 1000)
-  );
+  window.addEventListener("load", () => initialAnimation());
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleMenu = () => {
     let open = !openMenu;
     setOpenMenu(open);
   };
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", pageTransitionAnimationStart);
+    router.events.on("routeChangeComplete", pageTransitionAnimationEnd);
+    return () => {
+      router.events.off("routeChangeStart", pageTransitionAnimationStart);
+      router.events.on("routeChangeComplete", pageTransitionAnimationEnd);
+    };
+  });
 
   return (
     <>
@@ -63,6 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <ReCaptchaProvider>
+        <div className="loading-screen" />
         <div className="globalLoader">
           <Spinner />
           <p>Loading...</p>
