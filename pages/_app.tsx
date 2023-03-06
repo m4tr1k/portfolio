@@ -9,14 +9,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
-import Spinner from "../components/Spinner";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Animations from "../utils/animations";
+import PageTransition from "../components/PageTransition";
+import { PageTransitionContext } from "../stores";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -30,41 +29,14 @@ const titillium_web = Titillium_Web({
 const cabin = Cabin({ display: "swap" });
 const courgette = Courgette({ weight: "400", display: "swap" });
 
-let animations: Animations;
-
-if (typeof window !== "undefined") {
-  animations = new Animations();
-  window.addEventListener("load", () => animations.initialAnimation());
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
   const [openMenu, setOpenMenu] = useState(false);
+  const [pageLoading, setPageLoading] = useState(false);
 
   const toggleMenu = () => {
     let open = !openMenu;
     setOpenMenu(open);
   };
-
-  useEffect(() => {
-    router.events.on(
-      "routeChangeStart",
-      animations.pageTransitionAnimationStart
-    );
-
-    router.events.on("routeChangeComplete", () =>
-      animations.pageTransitionAnimationEnd(setOpenMenu)
-    );
-    return () => {
-      router.events.off(
-        "routeChangeStart",
-        animations.pageTransitionAnimationStart
-      );
-      router.events.on("routeChangeComplete", () =>
-        animations.pageTransitionAnimationEnd(setOpenMenu)
-      );
-    };
-  }, [router.events]);
 
   return (
     <>
@@ -76,16 +48,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <ReCaptchaProvider>
-        <div className="loading-screen" />
-        <div className="globalLoader">
-          <Spinner />
-          <p>Loading...</p>
-        </div>
-        <main id="main">
-          <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
-          <Menu showMenu={openMenu} />
-          <Component {...pageProps} />
-        </main>
+        <PageTransitionContext.Provider value={{ pageLoading, setPageLoading }}>
+          <PageTransition />
+          <main id="main">
+            <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
+            <Menu showMenu={openMenu} />
+            <Component {...pageProps} />
+          </main>
+        </PageTransitionContext.Provider>
       </ReCaptchaProvider>
     </>
   );

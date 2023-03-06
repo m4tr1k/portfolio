@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import Logo from "./Logo";
 
@@ -8,7 +9,15 @@ type Props = {
 };
 
 const Navbar = (props: Props) => {
-  const { pathname } = useRouter();
+  const { events, pathname } = useRouter();
+
+  useEffect(() => {
+    events.on("routeChangeStart", () => {
+      if (props.openMenu) {
+        props.toggleMenu();
+      }
+    });
+  }, [props, events]);
 
   return (
     <nav

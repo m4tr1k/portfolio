@@ -1,5 +1,5 @@
 import styles from "../styles/components/Logo.module.css";
-import Link from "next/link";
+import Link from "./Link";
 
 type Props = {
   inHome: boolean;
