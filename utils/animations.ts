@@ -1,36 +1,40 @@
-export const initialAnimation = () => {
-  return setTimeout(() => {
-    const loader = document.querySelector(".globalLoader") as HTMLElement;
-    const root = document.querySelector(":root") as HTMLElement;
-    const main = document.getElementById("main");
-    if (loader && main) {
-      window.scrollTo(0, 0);
-      loader.style.display = "none";
-      main.style.animation = "appear 0.4s ease-in-out";
-      main.style.opacity = "1";
-      root.style.overflow = "scroll";
-    }
-  }, 1000);
-};
+class Animations {
+  private loader: HTMLElement | undefined;
+  private root: HTMLElement | undefined;
+  private main: HTMLElement | undefined;
+  private loadingScreen: HTMLElement | undefined;
 
-export const pageTransitionAnimationStart = () => {
-  const loadingScreen = document.querySelector(
-    ".loading-screen"
-  ) as HTMLElement;
-  const main = document.getElementById("main");
-  if (loadingScreen && main) {
-    loadingScreen.classList.add("show");
+  constructor() {
+    if (typeof document !== "undefined") {
+      this.loader = document.querySelector(".globalLoader") as HTMLElement;
+      this.root = document.querySelector(":root") as HTMLElement;
+      this.main = document.getElementById("main") as HTMLElement;
+      this.loadingScreen = document.querySelector(
+        ".loading-screen"
+      ) as HTMLElement;
+    }
   }
-};
 
-export const pageTransitionAnimationEnd = () => {
-  return setTimeout(() => {
-    const loadingScreen = document.querySelector(
-      ".loading-screen"
-    ) as HTMLElement;
-    const main = document.getElementById("main");
-    if (loadingScreen && main) {
-      loadingScreen.classList.remove("show");
-    }
-  }, 1000);
-};
+  initialAnimation = () => {
+    return setTimeout(() => {
+      window.scrollTo(0, 0);
+      this.loader!.style.display = "none";
+      this.main!.style.animation = "appear 0.4s ease-in-out";
+      this.main!.style.opacity = "1";
+      this.root!.style.overflow = "scroll";
+    }, 1000);
+  };
+
+  pageTransitionAnimationStart = () => {
+    this.loadingScreen!.classList.add("show");
+  };
+
+  pageTransitionAnimationEnd = (setOpenMenu: Function) => {
+    setOpenMenu(false);
+    return setTimeout(() => {
+      this.loadingScreen!.classList.remove("show");
+    }, 1000);
+  };
+}
+
+export default Animations;

@@ -16,11 +16,7 @@ import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import {
-  initialAnimation,
-  pageTransitionAnimationEnd,
-  pageTransitionAnimationStart,
-} from "../utils/animations";
+import Animations from "../utils/animations";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -34,8 +30,11 @@ const titillium_web = Titillium_Web({
 const cabin = Cabin({ display: "swap" });
 const courgette = Courgette({ weight: "400", display: "swap" });
 
+let animations: Animations;
+
 if (typeof window !== "undefined") {
-  window.addEventListener("load", () => initialAnimation());
+  animations = new Animations();
+  window.addEventListener("load", () => animations.initialAnimation());
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -48,13 +47,24 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    router.events.on("routeChangeStart", pageTransitionAnimationStart);
-    router.events.on("routeChangeComplete", pageTransitionAnimationEnd);
+    router.events.on(
+      "routeChangeStart",
+      animations.pageTransitionAnimationStart
+    );
+
+    router.events.on("routeChangeComplete", () =>
+      animations.pageTransitionAnimationEnd(setOpenMenu)
+    );
     return () => {
-      router.events.off("routeChangeStart", pageTransitionAnimationStart);
-      router.events.on("routeChangeComplete", pageTransitionAnimationEnd);
+      router.events.off(
+        "routeChangeStart",
+        animations.pageTransitionAnimationStart
+      );
+      router.events.on("routeChangeComplete", () =>
+        animations.pageTransitionAnimationEnd(setOpenMenu)
+      );
     };
-  });
+  }, [router.events]);
 
   return (
     <>
