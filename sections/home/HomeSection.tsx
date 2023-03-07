@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/sections/HomeSection.module.css";
+import styles from "../../styles/sections/home/HomeSection.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "next-i18next";

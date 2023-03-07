@@ -1,0 +1,18 @@
+{
+    "/": {
+        "color": "main-color",
+        "fontColor": "secondary-color"
+    },
+    "/blog": {
+        "color": "blog-color",
+        "fontColor": "main-color"
+    },
+    "/portfolio": {
+        "color": "main-color",
+        "fontColor": "secondary-color"
+    },
+    "/about": {
+        "color": "main-color",
+        "fontColor": "secondary-color"
+    }
+}

@@ -37,7 +37,7 @@ const PageTransition = () => {
     return () => {
       events.off("routeChangeComplete", () => {});
     };
-  }, [pageTransitionContext.pageLoading]);
+  }, [pageTransitionContext, events]);
 
   return (
     <>

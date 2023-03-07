@@ -6,13 +6,12 @@
   --main-color: #E1D8CF;
   --secondary-color: #2E294E;
   --third-color: #605B56;
+  --blog-color: #493843;
 }
 
 html,
-body {  
-  background-color: var(--main-color);
+body {
   font-family: var(--cabin-font);
-  color: var(--secondary-color);
   overflow-y: hidden;
   overflow-x: hidden;
   margin: 0;
@@ -148,6 +147,7 @@ p {
   opacity: 1;
   transition: opacity linear 1s;
   gap: 1em;
+  background-color: var(--main-color);
 }
 
 @media screen and (max-width: 1200px) {

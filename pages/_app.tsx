@@ -13,9 +13,11 @@ import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PageTransition from "../components/PageTransition";
 import { PageTransitionContext } from "../stores";
+import { useRouter } from "next/router";
+import colors from "../constants/page-colors.json";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -30,8 +32,18 @@ const cabin = Cabin({ display: "swap" });
 const courgette = Courgette({ weight: "400", display: "swap" });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { pathname } = useRouter();
   const [openMenu, setOpenMenu] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
+
+  const color = (colors as any)[pathname]
+    ? (colors as any)[pathname].color
+    : "main-color";
+  const fontColor = (colors as any)[pathname]
+    ? (colors as any)[pathname].fontColor
+    : "secondary-color";
+
+  console.log(pathname);
 
   const toggleMenu = () => {
     let open = !openMenu;
@@ -45,6 +57,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           --titillium_web-font: ${titillium_web.style.fontFamily};
           --cabin-font: ${cabin.style.fontFamily};
           --courgette-font: ${courgette.style.fontFamily};
+        }
+
+        html,
+        body {
+          background-color: var(--${color});
+          color: var(--${fontColor});
         }
       `}</style>
       <ReCaptchaProvider>
