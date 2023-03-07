@@ -9,12 +9,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
-import Spinner from "../components/Spinner";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import PageTransition from "../components/PageTransition";
+import { PageTransitionContext } from "../stores";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -28,25 +29,9 @@ const titillium_web = Titillium_Web({
 const cabin = Cabin({ display: "swap" });
 const courgette = Courgette({ weight: "400", display: "swap" });
 
-if (typeof window !== "undefined") {
-  window.addEventListener("load", () =>
-    setTimeout(() => {
-      const loader = document.querySelector(".globalLoader") as HTMLElement;
-      const root = document.querySelector(":root") as HTMLElement;
-      const main = document.getElementById("main");
-      if (loader && main) {
-        window.scrollTo(0, 0);
-        loader.style.display = "none";
-        main.style.animation = "appear 0.4s ease-in-out";
-        main.style.opacity = "1";
-        root.style.overflow = "scroll";
-      }
-    }, 1000)
-  );
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
   const [openMenu, setOpenMenu] = useState(false);
+  const [pageLoading, setPageLoading] = useState(false);
 
   const toggleMenu = () => {
     let open = !openMenu;
@@ -63,15 +48,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <ReCaptchaProvider>
-        <div className="globalLoader">
-          <Spinner />
-          <p>Loading...</p>
-        </div>
-        <main id="main">
-          <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
-          <Menu showMenu={openMenu} />
-          <Component {...pageProps} />
-        </main>
+        <PageTransitionContext.Provider value={{ pageLoading, setPageLoading }}>
+          <PageTransition />
+          <main id="main">
+            <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
+            <Menu showMenu={openMenu} />
+            <Component {...pageProps} />
+          </main>
+        </PageTransitionContext.Provider>
       </ReCaptchaProvider>
     </>
   );
