@@ -1,32 +1,21 @@
-
-.global-loader {
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
-    z-index: 9998;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    z-index: 9999;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    opacity: 1;
     transition: all linear 1s;
+    gap: 1em;
   }
 
 .loading-screen {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     opacity: 0;
     visibility: hidden;
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) .8s;
-    background-color: black;
+    background-color: var(--secondary-color);
   }
   
   .loading-screen.show {

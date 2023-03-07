@@ -24,7 +24,7 @@ const Navbar = (props: Props) => {
       className={styles.navbar}
       style={{ position: props.openMenu ? "fixed" : "absolute" }}
     >
-      <Logo inHome={pathname === "/"} />
+      <Logo color="main" inHome={pathname === "/"} />
       <div>
         <input
           checked={props.openMenu}
