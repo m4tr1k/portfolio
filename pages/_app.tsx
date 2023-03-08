@@ -9,7 +9,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
-import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faFilter,
+  faMagnifyingGlass,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
@@ -21,7 +26,15 @@ import colors from "../constants/page-colors.json";
 
 //FontAwesome config
 config.autoAddCss = false;
-library.add(faLinkedin, faGithub, faTwitter, faCheck, faXmark);
+library.add(
+  faLinkedin,
+  faGithub,
+  faTwitter,
+  faCheck,
+  faXmark,
+  faMagnifyingGlass,
+  faFilter
+);
 
 //Google Fonts config
 const titillium_web = Titillium_Web({
@@ -42,8 +55,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const fontColor = (colors as any)[pathname]
     ? (colors as any)[pathname].fontColor
     : "secondary-color";
-
-  console.log(pathname);
 
   const toggleMenu = () => {
     let open = !openMenu;

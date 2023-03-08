@@ -3,6 +3,7 @@ import styles from "../styles/components/ContactForm.module.css";
 import { useReCaptcha } from "next-recaptcha-v3";
 import ContactButton from "./ContactButton";
 import { useTranslation } from "next-i18next";
+import Input from "./Input";
 
 const ContactForm = () => {
   const { t } = useTranslation("home");
@@ -52,25 +53,7 @@ const ContactForm = () => {
       {inputs.map((input, index) => {
         return (
           <div className={styles.inputGroup} key={index}>
-            <label htmlFor={input.name} hidden={true}>
-              {input.name}
-            </label>
-            {input.type === "textarea" ? (
-              <textarea
-                placeholder={input.placeholder}
-                name={input.name}
-                id={input.name}
-                required
-              />
-            ) : (
-              <input
-                placeholder={input.placeholder}
-                type={input.type}
-                name={input.name}
-                id={input.name}
-                required
-              />
-            )}
+            <Input info={{ ...input, required: true }} />
           </div>
         );
       })}

@@ -1,0 +1,48 @@
+@value inputIcon from "../../components/Input.module.css";
+@value separator from "../../components/Separator.module.css";
+
+.filterMenu {
+    --filter-color: #B9B0A7;
+    margin: 3em 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filterMenu .inputIcon {
+    order: 1;
+    width: 800px;
+}
+
+.filterMenu input:-webkit-autofill, 
+.filterMenu input:-webkit-autofill:hover, 
+.filterMenu input:-webkit-autofill:focus, 
+.filterMenu input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--blog-color) inset;
+    -webkit-text-fill-color: var(--main-color);
+}
+
+.filterMenu input::placeholder, .filterMenu svg {
+    color: var(--filter-color);
+}
+
+.filterButton button {
+    border: none;
+    color: var(--filter-color);
+    padding: .6em 0 .6em 1em;
+}
+
+.article-session .separator {
+    margin: 3em 0;
+}
+
+@media screen and (min-width: 768px) {
+    .filterMenu {
+        flex-direction: row;
+    }
+
+    .filterMenu .inputIcon {
+        order: 0;
+    }
+}

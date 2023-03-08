@@ -6,10 +6,6 @@
     width: 100%;
     background-color: #1A153A;
     border: none;
-    color: var(--main-color);
-    font-family: var(--cabin-font);
-    padding: .6em 1em;
-    font-size: 1.25em;
 }
 
 .form input:-webkit-autofill, .form input:-webkit-autofill:hover, .form input:-webkit-autofill:focus, .form input:-webkit-autofill:active {

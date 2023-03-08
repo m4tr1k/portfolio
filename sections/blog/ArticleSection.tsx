@@ -1,4 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Input from "../../components/Input";
 import Section from "../../components/Section";
+import Separator from "../../components/Separator";
+import styles from "../../styles/sections/blog/ArticleSection.module.css";
 
 const ArticleSection = () => {
   return (
@@ -12,7 +16,24 @@ const ArticleSection = () => {
       }}
       id="blog"
     >
-      <div></div>
+      <div className={styles["article-session"]}>
+        <div className={styles.filterMenu}>
+          <Input
+            info={{
+              name: "Search",
+              placeholder: "Search",
+              required: false,
+              type: "input",
+              icon: "magnifying-glass",
+            }}
+          />
+          <div className={styles.filterButton}>
+            <FontAwesomeIcon icon={["fas", "filter"]} size="lg" />
+            <button>Filter</button>
+          </div>
+        </div>
+        <Separator color="#B9B0A7" />
+      </div>
     </Section>
   );
 };

@@ -3,6 +3,7 @@ import styles from "../../styles/sections/home/HomeSection.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "next-i18next";
+import Separator from "../../components/Separator";
 
 const HomeSection = () => {
   const { t } = useTranslation("home");
@@ -16,7 +17,7 @@ const HomeSection = () => {
             <br />
             Fernandes
           </h1>
-          <div className={styles.separator} />
+          <Separator color="var(--main-color)" />
           <p>{t("homepage.description")}</p>
         </div>
         <div className={styles.bottomBar}>

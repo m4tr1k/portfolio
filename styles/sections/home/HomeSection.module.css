@@ -38,13 +38,6 @@
     font-size: clamp(1.375rem, 1.0342308rem + 0.923846vw, 1.688rem);
 }
 
-.separator {
-    height: 1px;
-    width: 100%;
-    background-color: var(--main-color);
-    margin: 1.15em 0 1.25em 0;
-}
-
 .bottomBar {
     position: absolute;
     bottom: 0;
