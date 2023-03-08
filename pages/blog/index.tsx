@@ -10,7 +10,7 @@ const Blog: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>{`${t("title")} | Francisco Fernandes`}</title>
+        <title>{`${t("pageHeaderTitle")} | Francisco Fernandes`}</title>
         <meta
           name="description"
           content="Explore my blog and articles. I write about software engineering, web development, and other topics."

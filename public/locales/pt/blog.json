@@ -1,3 +1,10 @@
 {
-    "title": "O Meu Blog e Artigos"
+    "pageHeaderTitle": "O Meu Blog e Artigos",
+    "sectionTitle": "Blog",
+    "title": "Artigos Escritos",
+    "description": "Vê e lê os meus artigos sobre os mais variados temas",
+    "filterMenu": {
+        "search": "Pesquisa",
+        "filter": "Filtros"
+    }
 }

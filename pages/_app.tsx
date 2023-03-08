@@ -11,6 +11,7 @@ import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 import {
   faCheck,
+  faClock,
   faFilter,
   faMagnifyingGlass,
   faXmark,
@@ -33,7 +34,8 @@ library.add(
   faCheck,
   faXmark,
   faMagnifyingGlass,
-  faFilter
+  faFilter,
+  faClock
 );
 
 //Google Fonts config

@@ -3,16 +3,17 @@
 
 .filterMenu {
     --filter-color: #B9B0A7;
-    margin: 3em 0 2em;
+    margin: 2em 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    gap: .5em;
 }
 
 .filterMenu .inputIcon {
     order: 1;
-    width: 800px;
+    width: 100%;
 }
 
 .filterMenu input:-webkit-autofill, 
@@ -33,16 +34,18 @@
     padding: .6em 0 .6em 1em;
 }
 
-.article-session .separator {
+.article-section .separator {
     margin: 3em 0;
 }
 
 @media screen and (min-width: 768px) {
     .filterMenu {
         flex-direction: row;
+        margin: 3em 0 2em;
     }
 
     .filterMenu .inputIcon {
         order: 0;
+        width: clamp(300px, 50vw, 800px);
     }
 }

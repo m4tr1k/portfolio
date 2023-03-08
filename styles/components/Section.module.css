@@ -3,6 +3,10 @@
     padding-bottom: 8.375em;
 }
 
+.section.navbar-spacing {
+    padding-top: calc(8.375em + 1.1em);
+}
+
 .titleContainer .title {
     font-weight: bold;
     font-size: clamp(18px, 3vw, 22px);
