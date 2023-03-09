@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import Separator from "../../components/Separator";
 
 const HomeSection = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("common");
 
   return (
     <div style={{ position: "relative" }}>

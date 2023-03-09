@@ -3,15 +3,15 @@
         "color": "main-color",
         "fontColor": "secondary-color"
     },
-    "/blog": {
+    "blog": {
         "color": "blog-color",
         "fontColor": "main-color"
     },
-    "/portfolio": {
+    "portfolio": {
         "color": "main-color",
         "fontColor": "secondary-color"
     },
-    "/about": {
+    "about": {
         "color": "main-color",
         "fontColor": "secondary-color"
     }

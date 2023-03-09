@@ -8,7 +8,6 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
-import { ReCaptchaProvider } from "next-recaptcha-v3";
 import {
   faCheck,
   faClock,
@@ -17,13 +16,10 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
-import Navbar from "../components/Navbar";
-import Menu from "../components/Menu";
-import { useState } from "react";
-import PageTransition from "../components/PageTransition";
-import { PageTransitionContext } from "../stores";
 import { useRouter } from "next/router";
 import colors from "../constants/page-colors.json";
+import Layout from "../layouts/Layout";
+import nextI18nextConfig from "../next-i18next.config";
 
 //FontAwesome config
 config.autoAddCss = false;
@@ -48,20 +44,14 @@ const courgette = Courgette({ weight: "400", display: "swap" });
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
-  const [openMenu, setOpenMenu] = useState(false);
-  const [pageLoading, setPageLoading] = useState(false);
+  const pageName = pathname.split("/")[1] !== "" ? pathname.split("/")[1] : "/";
 
-  const color = (colors as any)[pathname]
-    ? (colors as any)[pathname].color
+  const color = (colors as any)[pageName]
+    ? (colors as any)[pageName].color
     : "main-color";
-  const fontColor = (colors as any)[pathname]
-    ? (colors as any)[pathname].fontColor
+  const fontColor = (colors as any)[pageName]
+    ? (colors as any)[pageName].fontColor
     : "secondary-color";
-
-  const toggleMenu = () => {
-    let open = !openMenu;
-    setOpenMenu(open);
-  };
 
   return (
     <>
@@ -78,18 +68,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           color: var(--${fontColor});
         }
       `}</style>
-      <ReCaptchaProvider>
-        <PageTransitionContext.Provider value={{ pageLoading, setPageLoading }}>
-          <PageTransition />
-          <main id="main">
-            <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
-            <Menu showMenu={openMenu} />
-            <Component {...pageProps} />
-          </main>
-        </PageTransitionContext.Provider>
-      </ReCaptchaProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18nextConfig as any);

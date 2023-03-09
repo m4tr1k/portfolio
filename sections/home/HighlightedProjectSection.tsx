@@ -9,7 +9,7 @@ type Props = {
 };
 
 const HighlightedProjectSection = (props: Props) => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("common");
 
   const Component = useMemo(
     () => getMDXComponent(props.projects),

@@ -6,7 +6,7 @@ import styles from "../../styles/sections/home/ContactSection.module.css";
 import contacts from "../../constants/contacts.json";
 
 const ContactSection = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("common");
 
   return (
     <Section
