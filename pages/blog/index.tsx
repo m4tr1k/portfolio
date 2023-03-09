@@ -3,8 +3,14 @@ import { useTranslation } from "next-i18next";
 import serverSideTranslations from "../../utils/serverSideTranslations";
 import Head from "next/head";
 import ArticleSection from "../../sections/blog/ArticleSection";
+import { getArticles } from "../../utils/get-posts";
 
-const Blog: NextPage = () => {
+type Props = {
+  articles: Article[];
+};
+
+const Blog: NextPage = (props) => {
+  const { articles } = props as Props;
   const { t } = useTranslation("blog");
 
   return (
@@ -16,17 +22,18 @@ const Blog: NextPage = () => {
           content="Explore my blog and articles. I write about software engineering, web development, and other topics."
         />
       </Head>
-      <ArticleSection />
+      <ArticleSection articles={articles} />
     </div>
   );
 };
 
 export async function getStaticProps({ locale }: any) {
+  const articles = getArticles(locale);
   const translations = await serverSideTranslations(locale, ["blog", "menu"]);
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["menu", "blog"])),
+      articles,
       ...translations,
     },
   };

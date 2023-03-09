@@ -12,6 +12,7 @@
 }
 
 .info {
+    width: 100%;
     flex-direction: column;
 }
 
@@ -47,6 +48,7 @@
 }
 
 .tag {
+    text-transform: capitalize;
     color: var(--blog-color);
     background-color: #B9B0A7;
     padding: .5em .8em;
