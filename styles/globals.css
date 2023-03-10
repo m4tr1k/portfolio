@@ -33,12 +33,10 @@ html,body,h1,h2,h3,h4,h5,h6,p,ul {
 
 h1 {
   font-size: clamp(2.813rem, 1.7785172rem + 4.872414vw, 4.688rem);
-  line-height: 1.15;
 }
 
 h2 {
   font-size: clamp(2.25rem, 1.3333333rem + 3.333333vw, 3.215rem);
-  line-height: 1.15;
 }
 
 a {
@@ -97,7 +95,7 @@ p {
 }
 
 .project-description div:first-child {
-  margin-bottom: 2em;
+  margin-bottom: 1.3em;
 }
 
 .project-description div:first-child p {
@@ -164,4 +162,38 @@ p {
 }
 
 /* END OF STYLES FOR MDX */
+
+/* STYLES FOR ARTICLE */
+
+.article-header {
+  position: relative;
+  height: 400px;
+}
+
+.article-header div:first-child {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 42) 0.00%, rgba(41, 40, 28, 0.37) -6.33%, var(--blog-color) 100%)
+}
+
+.article-header img {
+  object-fit: cover;
+  position: absolute;
+}
+
+/* make the article body in a container format with a lot of padding on the sides by modifying the padding with clamp */
+
+.article-body {
+  padding: 0 25%;
+}
+
+.title-description {
+  text-align: center;
+}
+
+.title-description h1 {
+  margin: 1em 0 .3em;
+}
  

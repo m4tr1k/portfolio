@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "next-i18next";
-import Article from "../../components/Article";
+import BriefArticle from "../../components/BriefArticle";
 import Input from "../../components/Input";
 import Section from "../../components/Section";
 import Separator from "../../components/Separator";
 import styles from "../../styles/sections/blog/ArticleSection.module.css";
 
 type Props = {
-  articles: Article[];
+  articles: ArticleMetadata[];
 };
 
 const ArticleSection = (props: Props) => {
@@ -45,7 +45,7 @@ const ArticleSection = (props: Props) => {
         {props.articles.map((article, index) => {
           return (
             <>
-              <Article info={article} />
+              <BriefArticle info={article} />
               <Separator color="#B9B0A7" />
             </>
           );

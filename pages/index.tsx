@@ -6,11 +6,9 @@ import HomeSection from "../sections/home/HomeSection";
 import HighlightedProjectSection from "../sections/home/HighlightedProjectSection";
 import ContactSection from "../sections/home/ContactSession";
 import serverSideTranslations from "../utils/serverSideTranslations";
-import { bundleMDX } from "mdx-bundler";
 import matter from "gray-matter";
-import remarkMdxImages from "remark-mdx-images";
-import imageMetadata from "../utils/image-metadata";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import { readMDXFile } from "../utils/readMDXFile";
 
 type Props = {
   highlightedProjects: string;
@@ -43,19 +41,10 @@ export async function getStaticProps({ locale }: any) {
   const source = fs.readFileSync(pathFile, "utf8");
   const { content } = matter(source);
 
-  const { code: highlightedProjects } = await bundleMDX({
-    source: content,
-    mdxOptions(options) {
-      options.remarkPlugins = [
-        ...(options.remarkPlugins ?? []),
-        remarkMdxImages,
-      ];
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), imageMetadata];
-      return options;
-    },
-  });
-
-  const translations = await serverSideTranslations(locale, ["common", "menu"]);
+  const [highlightedProjects, translations] = await Promise.all([
+    readMDXFile(content),
+    serverSideTranslations(locale, ["common", "menu"]),
+  ]);
 
   return {
     props: {

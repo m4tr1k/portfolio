@@ -6,7 +6,7 @@ import ArticleSection from "../../sections/blog/ArticleSection";
 import { getArticles } from "../../utils/get-posts";
 
 type Props = {
-  articles: Article[];
+  articles: ArticleMetadata[];
 };
 
 const Blog: NextPage = (props) => {
