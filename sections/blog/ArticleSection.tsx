@@ -45,7 +45,7 @@ const ArticleSection = (props: Props) => {
         {props.articles.map((article, index) => {
           return (
             <>
-              <BriefArticle info={article} />
+              <BriefArticle info={article} key={"article" + index} />
               <Separator color="#B9B0A7" />
             </>
           );

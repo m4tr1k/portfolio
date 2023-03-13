@@ -183,8 +183,6 @@ p {
   position: absolute;
 }
 
-/* make the article body in a container format with a lot of padding on the sides by modifying the padding with clamp */
-
 .article-body {
   padding: 0 25%;
 }
@@ -197,3 +195,12 @@ p {
   margin: 1em 0 .3em;
 }
  
+.article-content {
+  text-align: justify;
+  margin: 3em 0;
+  line-height: 1.7;
+}
+
+.article-content :not(p:last-child){
+  margin-bottom: 1.5em;
+}

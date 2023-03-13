@@ -1,5 +1,6 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
+import Code from "./Code";
 import Image from "./Image";
 import Link from "./Link";
 
@@ -18,6 +19,7 @@ const MDXComponent = (props: Props) => {
       components={{
         img: Image as React.ComponentType,
         a: Link as React.ComponentType,
+        code: Code as React.ComponentType,
       }}
     />
   );
