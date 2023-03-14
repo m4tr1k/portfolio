@@ -6,6 +6,7 @@ import Article from "../../components/Article";
 
 type Props = {
   article: Article;
+  locale: string;
 };
 
 const ArticleBlogPost: NextPage<Props> = (props) => {
@@ -13,6 +14,26 @@ const ArticleBlogPost: NextPage<Props> = (props) => {
     <div>
       <Head>
         <title>{`${props.article.metadata.title} | Francisco Fernandes`}</title>
+        <meta
+          name="description"
+          content={props.article.metadata.description}
+          key="desc"
+        />
+        <meta property="og:title" content={props.article.metadata.title} />
+        <meta
+          property="og:description"
+          content={props.article.metadata.description}
+        />
+        <meta
+          property="og:image"
+          content={"https://ffwork.space/" + props.article.metadata.image}
+        />
+        <meta
+          property="og:url"
+          content={"https://ffwork.space/blog/" + props.article.metadata.id}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content={props.locale} />
       </Head>
       <Article this={props.article} />
     </div>
@@ -21,7 +42,6 @@ const ArticleBlogPost: NextPage<Props> = (props) => {
 
 export async function getStaticProps(context: any) {
   const { params, locale } = context;
-
   const id = params.id;
 
   try {
@@ -32,7 +52,8 @@ export async function getStaticProps(context: any) {
 
     return {
       props: {
-        article,
+        article: { ...article, metadata: { ...article.metadata, id } },
+        locale,
         ...translations,
       },
     };
