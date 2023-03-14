@@ -9,7 +9,7 @@ type Props = {
 
 const Menu = (props: Props) => {
   const { t } = useTranslation("menu");
-  const { locale, pathname } = useRouter();
+  const { locale, asPath } = useRouter();
 
   const menuList = [
     {
@@ -37,7 +37,7 @@ const Menu = (props: Props) => {
               href={"/" + item.url}
               key={"item-" + index}
               className={
-                item.url === pathname.split("/")[1] ? styles.active : undefined
+                item.url === asPath.split("/")[1] ? styles.active : undefined
               }
             >
               <span>0{index + 1}</span>
@@ -50,7 +50,7 @@ const Menu = (props: Props) => {
         {["en", "pt"].map((lang) => {
           return (
             <Link
-              href={pathname}
+              href={asPath}
               className={locale === lang ? styles.selected : undefined}
               key={lang}
               locale={lang}
