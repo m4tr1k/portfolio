@@ -14,15 +14,15 @@ const Menu = (props: Props) => {
   const menuList = [
     {
       name: t("about"),
-      url: "/about",
+      url: "about",
     },
     {
       name: t("portfolio"),
-      url: "/portfolio",
+      url: "portfolio",
     },
     {
       name: t("blog"),
-      url: "/blog",
+      url: "blog",
     },
   ];
 
@@ -34,9 +34,11 @@ const Menu = (props: Props) => {
         {menuList.map((item, index) => {
           return (
             <Link
-              href={item.url}
+              href={"/" + item.url}
               key={"item-" + index}
-              className={item.url === pathname ? styles.active : undefined}
+              className={
+                item.url === pathname.split("/")[1] ? styles.active : undefined
+              }
             >
               <span>0{index + 1}</span>
               <h1>{item.name}</h1>

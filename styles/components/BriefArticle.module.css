@@ -17,6 +17,8 @@
 }
 
 .article .img {
+    height: auto;
+    width: auto;
     display: none;
     min-width: clamp(200px, 30vw, 500px);
     object-fit: cover;
@@ -34,10 +36,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin-bottom: 2em;
-}
-
-.tags > *:first-child {
-    display: none;
 }
 
 .tags div {

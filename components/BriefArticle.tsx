@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import styles from "../styles/components/Article.module.css";
+import styles from "../styles/components/BriefArticle.module.css";
 import Link from "./Link";
 
 type Props = {
@@ -14,7 +14,7 @@ type TagProps = {
 const BriefArticle = (props: Props) => {
   const { info } = props;
   const tags = info.tags.split(",");
-  const shownTags = tags.slice(0, 2);
+  const shownTags = tags.slice(0, 1);
   const remainingTagsNumber = tags.length - shownTags.length;
 
   return (
@@ -45,7 +45,7 @@ const BriefArticle = (props: Props) => {
             </div>
             <div className={styles.clock}>
               <FontAwesomeIcon icon={["fas", "clock"]} size="lg" />
-              <p>5min</p>
+              <p>{info.minutes}min</p>
             </div>
           </div>
         </div>

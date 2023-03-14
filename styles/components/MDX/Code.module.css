@@ -1,0 +1,4 @@
+.code {
+    padding: 2em !important;
+    font-size: clamp(15px, 3vw, 17px);
+}

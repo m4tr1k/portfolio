@@ -5,6 +5,7 @@ type ArticleMetadata = {
   date: string;
   image: string;
   tags: string;
+  minutes: number;
 };
 
 type Article = {

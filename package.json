@@ -16,6 +16,7 @@
     "@next/font": "^13.1.6",
     "esbuild": "^0.17.10",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.7.0",
     "i18next": "^22.4.10",
     "image-size": "^1.0.2",
     "mdx-bundler": "^9.2.1",
@@ -27,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.5",
     "react-intersection-observer": "^9.4.3",
+    "reading-time": "^1.5.0",
     "remark-mdx-images": "^2.0.0",
     "sharp": "^0.31.3",
     "unist-util-visit": "^4.1.2"

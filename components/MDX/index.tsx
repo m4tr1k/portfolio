@@ -1,8 +1,8 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
-import Code from "./Code";
 import Image from "./Image";
 import Link from "./Link";
+import Code from "./Code";
 
 type Props = {
   content: string;

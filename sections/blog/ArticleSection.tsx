@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "next-i18next";
+import { Fragment } from "react";
 import BriefArticle from "../../components/BriefArticle";
 import Input from "../../components/Input";
 import Section from "../../components/Section";
@@ -44,10 +45,10 @@ const ArticleSection = (props: Props) => {
       <div className={styles.articles}>
         {props.articles.map((article, index) => {
           return (
-            <>
-              <BriefArticle info={article} key={"article" + index} />
-              <Separator color="#B9B0A7" />
-            </>
+            <Fragment key={"article" + index}>
+              <BriefArticle info={article} />
+              <Separator color="#B9B0A7" key={"separator" + index} />
+            </Fragment>
           );
         })}
       </div>
