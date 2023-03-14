@@ -2,11 +2,11 @@ import { useTranslation } from "next-i18next";
 import ContactForm from "../../components/ContactForm";
 import Section from "../../components/Section";
 import SocialMedia from "../../components/SocialMedia";
-import styles from "../../styles/sections/ContactSection.module.css";
-import contacts from "./contacts.json";
+import styles from "../../styles/sections/home/ContactSection.module.css";
+import contacts from "../../constants/contacts.json";
 
 const ContactSection = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("common");
 
   return (
     <Section

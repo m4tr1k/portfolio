@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import serverSideTranslations from "../../utils/serverSideTranslations";
 import Head from "next/head";
 import Section from "../../components/Section";
 
@@ -24,9 +24,11 @@ const About: NextPage = () => {
 };
 
 export async function getStaticProps({ locale }: any) {
+  const translations = await serverSideTranslations(locale, ["about", "menu"]);
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["menu", "about"])),
+      ...translations,
     },
   };
 }

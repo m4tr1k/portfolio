@@ -8,18 +8,31 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
-import { ReCaptchaProvider } from "next-recaptcha-v3";
-import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faClock,
+  faFilter,
+  faMagnifyingGlass,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
-import Navbar from "../components/Navbar";
-import Menu from "../components/Menu";
-import { useEffect, useState } from "react";
-import PageTransition from "../components/PageTransition";
-import { PageTransitionContext } from "../stores";
+import { useRouter } from "next/router";
+import colors from "../constants/page-colors.json";
+import Layout from "../layouts/Layout";
+import nextI18nextConfig from "../next-i18next.config";
 
 //FontAwesome config
 config.autoAddCss = false;
-library.add(faLinkedin, faGithub, faTwitter, faCheck, faXmark);
+library.add(
+  faLinkedin,
+  faGithub,
+  faTwitter,
+  faCheck,
+  faXmark,
+  faMagnifyingGlass,
+  faFilter,
+  faClock
+);
 
 //Google Fonts config
 const titillium_web = Titillium_Web({
@@ -30,13 +43,15 @@ const cabin = Cabin({ display: "swap" });
 const courgette = Courgette({ weight: "400", display: "swap" });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [openMenu, setOpenMenu] = useState(false);
-  const [pageLoading, setPageLoading] = useState(false);
+  const { pathname } = useRouter();
+  const pageName = pathname.split("/")[1] !== "" ? pathname.split("/")[1] : "/";
 
-  const toggleMenu = () => {
-    let open = !openMenu;
-    setOpenMenu(open);
-  };
+  const color = (colors as any)[pageName]
+    ? (colors as any)[pageName].color
+    : "main-color";
+  const fontColor = (colors as any)[pageName]
+    ? (colors as any)[pageName].fontColor
+    : "secondary-color";
 
   return (
     <>
@@ -46,19 +61,18 @@ function MyApp({ Component, pageProps }: AppProps) {
           --cabin-font: ${cabin.style.fontFamily};
           --courgette-font: ${courgette.style.fontFamily};
         }
+
+        html,
+        body {
+          background-color: var(--${color});
+          color: var(--${fontColor});
+        }
       `}</style>
-      <ReCaptchaProvider>
-        <PageTransitionContext.Provider value={{ pageLoading, setPageLoading }}>
-          <PageTransition />
-          <main id="main">
-            <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
-            <Menu showMenu={openMenu} />
-            <Component {...pageProps} />
-          </main>
-        </PageTransitionContext.Provider>
-      </ReCaptchaProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18nextConfig as any);

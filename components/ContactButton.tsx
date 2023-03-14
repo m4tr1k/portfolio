@@ -9,7 +9,7 @@ type Props = {
 };
 
 const ContactButton = (props: Props) => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("common");
 
   const renderStatus = useCallback(() => {
     switch (props.status) {

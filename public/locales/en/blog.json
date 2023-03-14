@@ -1,3 +1,10 @@
 {
-    "title": "My Blog and Articles"
+    "pageHeaderTitle": "My Blog and Articles",
+    "sectionTitle": "Blog",
+    "title": "Written Articles",
+    "description": "Discover my articles, which delve into a diverse range of technology-related topics",
+    "filterMenu": {
+        "search": "Search",
+        "filter": "Filter"
+    }
 }

@@ -1,32 +1,40 @@
 import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import serverSideTranslations from "../../utils/serverSideTranslations";
 import Head from "next/head";
-import Section from "../../components/Section";
+import ArticleSection from "../../sections/blog/ArticleSection";
+import { getArticles } from "../../utils/get-posts";
 
-const Blog: NextPage = () => {
+type Props = {
+  articles: ArticleMetadata[];
+};
+
+const Blog: NextPage = (props) => {
+  const { articles } = props as Props;
   const { t } = useTranslation("blog");
 
   return (
     <div>
       <Head>
-        <title>{`${t("title")} | Francisco Fernandes`}</title>
+        <title>{`${t("pageHeaderTitle")} | Francisco Fernandes`}</title>
         <meta
           name="description"
           content="Explore my blog and articles. I write about software engineering, web development, and other topics."
         />
       </Head>
-      <Section id="blog">
-        <h1 style={{ textAlign: "center" }}>Page In Development</h1>
-      </Section>
+      <ArticleSection articles={articles} />
     </div>
   );
 };
 
 export async function getStaticProps({ locale }: any) {
+  const articles = getArticles(locale);
+  const translations = await serverSideTranslations(locale, ["blog", "menu"]);
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["menu", "blog"])),
+      articles,
+      ...translations,
     },
   };
 }

@@ -1,20 +1,13 @@
 import { useTranslation } from "next-i18next";
-import { useMemo } from "react";
-import Section from "../components/Section";
-import { getMDXComponent } from "mdx-bundler/client";
-import { Link, Image } from "../components/MDX";
+import Section from "../../components/Section";
+import MDXComponent from "../../components/MDX";
 
 type Props = {
   projects: string;
 };
 
 const HighlightedProjectSection = (props: Props) => {
-  const { t } = useTranslation("home");
-
-  const Component = useMemo(
-    () => getMDXComponent(props.projects),
-    [props.projects]
-  );
+  const { t } = useTranslation("common");
 
   return (
     <Section
@@ -26,12 +19,7 @@ const HighlightedProjectSection = (props: Props) => {
         description: t("highlighted.description") as string,
       }}
     >
-      <Component
-        components={{
-          img: Image as React.ComponentType,
-          a: Link as React.ComponentType,
-        }}
-      />
+      <MDXComponent content={props.projects} />
     </Section>
   );
 };

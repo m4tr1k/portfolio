@@ -15,11 +15,17 @@ type Props = {
   children: ReactNode;
   className?: string;
   animate?: { showClass: string; hideClass: string };
+  navbarSpace?: boolean;
 };
 
 const Section = (props: Props) => {
   return (
-    <section className={`${styles.section} ${props.className}`} id={props.id}>
+    <section
+      className={`${styles.section} ${
+        props.navbarSpace ? styles["navbar-spacing"] : ""
+      } ${props.className ? props.className : ""}`}
+      id={props.id}
+    >
       <Container observe={props.animate}>
         {props.titleProps ? (
           <div
