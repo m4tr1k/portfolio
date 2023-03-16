@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import Input from "./Input";
 
 const ContactForm = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("contact");
 
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"

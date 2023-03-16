@@ -25,14 +25,11 @@ const ArticleBlogPost: NextPage<Props> = (props) => {
           content={props.article.metadata.description}
         />
         <meta
-          property="og:image"
-          content={"https://ffwork.space/" + props.article.metadata.image}
-        />
-        <meta
           property="og:url"
-          content={"https://ffwork.space/blog/" + props.article.metadata.id}
+          content={"https://www.ffwork.space/blog/" + props.article.metadata.id}
         />
         <meta property="og:type" content="article" />
+        <meta name="author" content="Francisco Fernandes" />
         <meta property="og:locale" content={props.locale} />
       </Head>
       <Article this={props.article} />

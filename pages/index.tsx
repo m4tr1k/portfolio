@@ -43,7 +43,7 @@ export async function getStaticProps({ locale }: any) {
 
   const [highlightedProjects, translations] = await Promise.all([
     readMDXFile(content),
-    serverSideTranslations(locale, ["common", "menu"]),
+    serverSideTranslations(locale, ["common", "menu", "contact"]),
   ]);
 
   return {

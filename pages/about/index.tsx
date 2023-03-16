@@ -2,7 +2,9 @@ import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import serverSideTranslations from "../../utils/serverSideTranslations";
 import Head from "next/head";
-import Section from "../../components/Section";
+import ContactSection from "../../sections/home/ContactSession";
+import AboutMeSection from "../../sections/about/AboutMeSection";
+import ServicesSection from "../../sections/about/ServicesSection";
 
 const About: NextPage = () => {
   const { t } = useTranslation("about");
@@ -16,15 +18,19 @@ const About: NextPage = () => {
           content="Know more about me in this page. I am a frontend software engineer, and this is my web workspace. Explore my projects, read my blog, and get in touch with me."
         />
       </Head>
-      <Section id="about">
-        <h1 style={{ textAlign: "center" }}>Page In Development</h1>
-      </Section>
+      <AboutMeSection />
+      <ServicesSection />
+      <ContactSection />
     </div>
   );
 };
 
 export async function getStaticProps({ locale }: any) {
-  const translations = await serverSideTranslations(locale, ["about", "menu"]);
+  const translations = await serverSideTranslations(locale, [
+    "about",
+    "menu",
+    "contact",
+  ]);
 
   return {
     props: {

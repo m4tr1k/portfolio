@@ -1,0 +1,29 @@
+.aboutMe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-right: clamp(25px, 5%, 4em);
+    padding-left: clamp(25px, 5%, 4em);
+}
+
+.aboutMe > section {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.status {
+    margin-top: 2em;
+}
+
+.status > p:first-child {
+    font-weight: bold;
+}
+
+.status > p {
+    margin-top: .2em;
+}
+
+.status > p:last-child {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+

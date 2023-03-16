@@ -12,7 +12,7 @@
         "fontColor": "secondary-color"
     },
     "about": {
-        "color": "main-color",
-        "fontColor": "secondary-color"
+        "color": "about-color",
+        "fontColor": "main-color"
     }
 }
