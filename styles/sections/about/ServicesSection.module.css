@@ -1,3 +1,7 @@
+.services-section {
+    padding-top: 1em;
+}
+
 .services {
     display: flex;
     flex-direction: row;

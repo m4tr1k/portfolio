@@ -15,6 +15,7 @@ const ServicesSection = () => {
         description: "I offer a wide spectrum of services including",
         size: "small",
       }}
+      className={styles["services-section"]}
     >
       <div className={styles.services}>
         <Card icon="mobile-screen" description={`Mobile\nDevelopment`} />

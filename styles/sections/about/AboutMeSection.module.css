@@ -1,13 +1,18 @@
 .aboutMe {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-right: clamp(25px, 5%, 4em);
     padding-left: clamp(25px, 5%, 4em);
+    padding-top: calc(8.375em + 4em);
 }
 
 .aboutMe > section {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
+    white-space: pre-line;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4em !important;
 }
 
 .status {
@@ -25,5 +30,25 @@
 .status > p:last-child {
     text-decoration: underline;
     text-underline-offset: 5px;
+}
+
+.pfp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.pfp > div:first-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(179.96deg, rgba(48, 52, 63, 0.421) 0.03%, rgb(48, 52, 63) 80%);
+}
+
+.pfp img {
+    height: 850px;
+    width: auto;
+    margin-right: 1em;
 }
 
