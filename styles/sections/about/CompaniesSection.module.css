@@ -14,7 +14,7 @@
 .companies .image {
     display: flex;
     justify-content: center;
-    height: 70px;
+    height: clamp(50px, 6vw, 70px);
 }
 
 .companies .image img {
@@ -27,5 +27,16 @@
             drop-shadow(0 0 0 var(--main-color))
             drop-shadow(0 0 0 var(--main-color))
             drop-shadow(0 0 0 var(--main-color));
+}
+
+@media screen and (max-width: 768px) {
+    .companies {
+        grid-template-columns: 1fr;
+        gap: 5em;
+    }
+
+    .companies .image {
+        height: clamp(45px, 14vw, 60px);
+    }
 }
 

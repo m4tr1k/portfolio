@@ -1,9 +1,10 @@
 .aboutMe {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     padding-right: clamp(25px, 5%, 4em);
     padding-left: clamp(25px, 5%, 4em);
-    padding-top: calc(8.375em + 4em);
+    padding-top: calc(8.375em + 1.1em);
+    padding-bottom: 4em;
 }
 
 .aboutMe > section {
@@ -12,7 +13,8 @@
     white-space: pre-line;
     display: flex;
     flex-direction: column;
-    padding-top: 4em !important;
+    padding-top: 0em !important;
+    padding-bottom: 4em !important;
 }
 
 .status {
@@ -35,7 +37,7 @@
 .pfp {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
 }
 
@@ -47,8 +49,24 @@
 }
 
 .pfp img {
-    height: 850px;
+    height: clamp(300px, 70vw, 650px);
     width: auto;
     margin-right: 1em;
 }
 
+
+@media screen and (min-width: 1000px) {
+    .aboutMe {
+        grid-template-columns: 40% 60%;
+        padding-top: calc(8.375em + 4em);
+        padding-bottom: 1em;
+    }
+
+    .pfp {
+        justify-content: flex-end;
+    }
+
+    .pfp img {
+        height: clamp(450px, 50vw, 850px);
+    }
+}

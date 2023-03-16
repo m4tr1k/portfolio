@@ -10,7 +10,6 @@ const AboutMeSection = () => {
     <div className={styles.aboutMe}>
       <Section
         id="about"
-        navbarSpace
         titleProps={{
           position: "left",
           sectionTitle: "About",
