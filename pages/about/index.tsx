@@ -5,6 +5,7 @@ import Head from "next/head";
 import ContactSection from "../../sections/home/ContactSession";
 import AboutMeSection from "../../sections/about/AboutMeSection";
 import ServicesSection from "../../sections/about/ServicesSection";
+import CompaniesSection from "../../sections/about/CompaniesSection";
 
 const About: NextPage = () => {
   const { t } = useTranslation("about");
@@ -20,6 +21,7 @@ const About: NextPage = () => {
       </Head>
       <AboutMeSection />
       <ServicesSection />
+      <CompaniesSection />
       <ContactSection />
     </div>
   );

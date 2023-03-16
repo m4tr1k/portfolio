@@ -1,0 +1,20 @@
+[
+    {
+        "name": "ICBraga",
+        "url": "/companies/icb.png",
+        "width": 127,
+        "height": 100
+    },
+    {
+        "name": "Goweb Agency",
+        "url": "/companies/goweb_agency.png",
+        "width": 937,
+        "height": 292
+    },
+    {
+        "name": "RWVP Investimentos",
+        "url": "/companies/rwvp.png",
+        "width": 103,
+        "height": 105
+    }
+]
