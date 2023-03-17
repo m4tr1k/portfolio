@@ -12,15 +12,15 @@ const AboutMeSection = () => {
         id="about"
         titleProps={{
           position: "left",
-          sectionTitle: "About",
-          title: "Who Am I?",
-          description: `I am Francisco Fernandes, a frontend software engineer who puts a lot of effort into creating beautiful and functional websites. I am also a passionate learner, and I am always looking for new ways to improve my skills. I work/worked as a freelancer for several companies, working on mobile and web applications.\n\nI am Francisco Fernandes, a frontend software engineer who puts a lot of effort into creating beautiful and functional websites. I am also a passionate learner, and I am always looking for new ways to improve my skills. I work/worked as a freelancer for several companies, working on mobile and web applications.`,
+          sectionTitle: t("aboutMe.sectionTitle"),
+          title: t("aboutMe.title"),
+          description: `${t("aboutMe.description")}`,
         }}
       >
         <div className={styles.status}>
-          <p>Current Status</p>
-          <p>Master's Student at ISEP and Freelancer</p>
-          <p>Available for Work</p>
+          <p>{t("aboutMe.currentStatus.title")}</p>
+          <p>{t("aboutMe.currentStatus.position")}</p>
+          <p>{t("aboutMe.currentStatus.availability")}</p>
         </div>
       </Section>
       <div className={styles.pfp}>

@@ -10,17 +10,23 @@ const ServicesSection = () => {
       id="services"
       titleProps={{
         position: "center",
-        sectionTitle: "Services",
-        title: "Making Thoughts into Reality",
-        description: "I offer a wide spectrum of services including",
+        sectionTitle: t("services.sectionTitle"),
+        title: t("services.title"),
+        description: t("services.description") as string,
         size: "small",
       }}
       className={styles["services-section"]}
     >
       <div className={styles.services}>
-        <Card icon="mobile-screen" description={`Mobile\nDevelopment`} />
-        <Card icon="desktop" description={`Frontend\nDevelopment`} />
-        <Card icon="laptop-code" description={`Full Stack\nDevelopment`} />
+        <Card
+          icon="mobile-screen"
+          description={`${t("services.list.mobile")}`}
+        />
+        <Card icon="desktop" description={`${t("services.list.frontend")}`} />
+        <Card
+          icon="laptop-code"
+          description={`${t("services.list.fullStack")}`}
+        />
       </div>
     </Section>
   );

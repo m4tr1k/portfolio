@@ -14,10 +14,7 @@ const About: NextPage = () => {
     <div>
       <Head>
         <title>{`${t("title")} | Francisco Fernandes`}</title>
-        <meta
-          name="description"
-          content="Know more about me in this page. I am a frontend software engineer, and this is my web workspace. Explore my projects, read my blog, and get in touch with me."
-        />
+        <meta name="description" content={t("description") as string} />
       </Head>
       <AboutMeSection />
       <ServicesSection />

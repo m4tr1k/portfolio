@@ -36,7 +36,7 @@
 
 .pfp {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     position: relative;
 }
@@ -49,24 +49,28 @@
 }
 
 .pfp img {
-    height: clamp(300px, 70vw, 650px);
-    width: auto;
-    margin-right: 1em;
+    width: clamp(300px, 70vw, 650px);
+    height: auto;
 }
 
 
 @media screen and (min-width: 1000px) {
     .aboutMe {
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 1fr 1fr;
         padding-top: calc(8.375em + 4em);
         padding-bottom: 1em;
     }
 
+    .aboutMe > section {
+        padding-top: clamp(0em, 5vw, 8em) !important;
+    }
+
     .pfp {
         justify-content: flex-end;
+        align-items: center;
     }
 
     .pfp img {
-        height: clamp(450px, 50vw, 850px);
+        width: clamp(520px, 50vw, 700px);
     }
 }

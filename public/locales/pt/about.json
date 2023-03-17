@@ -1,3 +1,28 @@
 {
-    "title": "Um Breve Resumo Sobre Mim"
+    "title": "Um Breve Resumo Sobre Mim",
+    "description": "Conheça mais sobre mim nesta página. Sou um engenheiro de software frontend, e este é o meu website. Explore meus projetos, leia meu blog e entre em contacto comigo.",
+    "aboutMe": {
+        "sectionTitle": "Sobre",
+        "title": "Quem sou?",
+        "description": "Sou Francisco Fernandes, um engenheiro de software frontend que coloca muito esforço em criar websites estitacamente apelativos e funcionais. Licenciado em Engenharia Informática no ISEP, possuo uma grande curiosidade em aprender novas coisas, e estou sempre à procura de novas formas de melhorar as minhas habilidades.\n\nTrabalhei/trabalho como freelancer para várias empresas, fazendo aplicações móveis e websites.",
+        "currentStatus": {
+            "title": "Estado Atual",
+            "position": "Estudante de Mestrado no ISEP e Freelancer",
+            "availability": "Disponível para trabalho"
+        }
+    },
+    "companies": {
+        "sectionTitle": "Empresas",
+        "title": "Trabalhei com"
+    },
+    "services": {
+        "sectionTitle": "Serviços",
+        "title": "Converta a sua ideia em realidade",
+        "description": "Ofereço uma variedade de serviços incluindo",
+        "list": {
+            "mobile": "Desenvolvimento\nMobile",
+            "frontend": "Desenvolvimento\nFrontend",
+            "fullStack": "Desenvolvimento\nFull Stack"
+        }
+    }
 }

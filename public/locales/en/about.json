@@ -1,3 +1,28 @@
 {
-    "title": "A Resumé About Myself"
+    "title": "A Resumé About Myself",
+    "description": "Know more about me in this page. I am a frontend software engineer, and this is my web workspace. Explore my projects, read my blog, and get in touch with me.",
+    "aboutMe": {
+        "sectionTitle": "About",
+        "title": "Who am I?",
+        "description": "I am Francisco Fernandes, a frontend software engineer who puts a lot of effort into creating beautiful and functional websites. Graduated in computer engineering at ISEP, I am also a passionate learner, and I am always looking for new ways to improve my skills.\n\nI work/worked as a freelancer for several companies, working on mobile and web applications.",
+        "currentStatus": {
+            "title": "Current Status",
+            "position": "Master's Student at ISEP and Freelancer",
+            "availability": "Available for work"
+        }
+    },
+    "companies": {
+        "sectionTitle": "Companies",
+        "title": "Worked for"
+    },
+    "services": {
+        "sectionTitle": "Services",
+        "title": "Making thoughts into reality",
+        "description": "I offer a wide spectrum of services including",
+        "list": {
+            "mobile": "Mobile\nDevelopment",
+            "frontend": "Frontend\nDevelopment",
+            "fullStack": "Full Stack\nDevelopment"
+        }
+    }
 }
