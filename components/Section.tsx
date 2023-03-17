@@ -7,6 +7,7 @@ type TitleProps = {
   title: string;
   position: "left" | "center";
   description?: string;
+  size?: "small" | "large";
 };
 
 type Props = {
@@ -19,6 +20,11 @@ type Props = {
 };
 
 const Section = (props: Props) => {
+  const TitleTag =
+    props.titleProps?.size === "small"
+      ? (props: any) => <h2>{props.children}</h2>
+      : (props: any) => <h1>{props.children}</h1>;
+
   return (
     <section
       className={`${styles.section} ${
@@ -33,7 +39,7 @@ const Section = (props: Props) => {
             style={{ textAlign: props.titleProps.position }}
           >
             <p className={styles.title}>{props.titleProps.sectionTitle}</p>
-            <h1>{props.titleProps.title}</h1>
+            <TitleTag>{props.titleProps.title}</TitleTag>
             {props.titleProps.description ? (
               <p className={styles.description}>
                 {props.titleProps.description}

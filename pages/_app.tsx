@@ -14,6 +14,9 @@ import {
   faFilter,
   faMagnifyingGlass,
   faXmark,
+  faLaptopCode,
+  faDesktop,
+  faMobileScreen,
 } from "@fortawesome/free-solid-svg-icons";
 import { appWithTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -31,7 +34,10 @@ library.add(
   faXmark,
   faMagnifyingGlass,
   faFilter,
-  faClock
+  faClock,
+  faLaptopCode,
+  faDesktop,
+  faMobileScreen
 );
 
 //Google Fonts config

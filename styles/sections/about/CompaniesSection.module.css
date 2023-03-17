@@ -1,0 +1,42 @@
+.company-section {
+    background-color: #242833;
+}
+
+.companies {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    margin-top: 3em;
+}
+
+.companies .image {
+    display: flex;
+    justify-content: center;
+    height: clamp(50px, 6vw, 70px);
+}
+
+.companies .image img {
+    height: inherit;
+    object-fit: contain;
+    filter: brightness(1000%) grayscale(100%)
+            opacity(0.1)
+            drop-shadow(0 0 0 var(--main-color))
+            drop-shadow(0 0 0 var(--main-color))
+            drop-shadow(0 0 0 var(--main-color))
+            drop-shadow(0 0 0 var(--main-color))
+            drop-shadow(0 0 0 var(--main-color));
+}
+
+@media screen and (max-width: 768px) {
+    .companies {
+        grid-template-columns: 1fr;
+        gap: 5em;
+    }
+
+    .companies .image {
+        height: clamp(45px, 14vw, 60px);
+    }
+}
+
