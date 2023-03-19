@@ -6,13 +6,12 @@ type Props = {
     showClass: string;
     hideClass: string;
   };
-  threshold?: number;
 };
 
 const Container = (props: Props) => {
   if (props.observe) {
     return (
-      <InView threshold={props.threshold ? props.threshold : 0.3} triggerOnce>
+      <InView threshold={0.3} triggerOnce>
         {({ inView, ref }) => (
           <div
             ref={ref}

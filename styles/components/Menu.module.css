@@ -1,8 +1,8 @@
 .menu {
     padding: 2em clamp(25px, 5%, 4em);
-    height: 100vh;
+    height: 100%;
     position: fixed;
-    background-color: var(--third-color);
+    background-color: var(--menu-color);
     width: 100%;
     z-index: 3;
     opacity: 0;

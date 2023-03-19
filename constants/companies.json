@@ -16,5 +16,11 @@
         "url": "/companies/rwvp.png",
         "width": 103,
         "height": 105
+    },
+    {
+        "name": "ISEP",
+        "url": "/companies/isep.png",
+        "width": 3064,
+        "height": 648
     }
 ]
