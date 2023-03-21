@@ -2,7 +2,8 @@ import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import serverSideTranslations from "../../utils/serverSideTranslations";
 import Head from "next/head";
-import Section from "../../components/Section";
+import PortfolioSection from "../../sections/portfolio/PortfolioSection";
+import ContactSection from "../../sections/home/ContactSession";
 
 const Portfolio: NextPage = () => {
   const { t } = useTranslation("portfolio");
@@ -16,17 +17,17 @@ const Portfolio: NextPage = () => {
           content="In this page you will find all my projects as a frontend software engineer. You can explore every case study, and see the thought process behind each project."
         />
       </Head>
-      <Section id="portfolio">
-        <h1 style={{ textAlign: "center" }}>Page In Development</h1>
-      </Section>
+      <PortfolioSection />
+      <ContactSection />
     </div>
   );
 };
 
 export async function getStaticProps({ locale }: any) {
   const translations = await serverSideTranslations(locale, [
-    "blog",
     "portfolio",
+    "menu",
+    "contact",
   ]);
 
   return {

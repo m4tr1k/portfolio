@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import Card from "../../components/Card";
+import ServiceCard from "../../components/Card/ServiceCard";
 import Section from "../../components/Section";
 import styles from "../../styles/sections/about/ServicesSection.module.css";
 
@@ -18,12 +18,15 @@ const ServicesSection = () => {
       className={styles["services-section"]}
     >
       <div className={styles.services}>
-        <Card
+        <ServiceCard
           icon="mobile-screen"
           description={`${t("services.list.mobile")}`}
         />
-        <Card icon="desktop" description={`${t("services.list.frontend")}`} />
-        <Card
+        <ServiceCard
+          icon="desktop"
+          description={`${t("services.list.frontend")}`}
+        />
+        <ServiceCard
           icon="laptop-code"
           description={`${t("services.list.fullStack")}`}
         />
