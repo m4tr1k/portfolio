@@ -8,8 +8,8 @@
         "fontColor": "main-color"
     },
     "portfolio": {
-        "color": "main-color",
-        "fontColor": "secondary-color"
+        "color": "portfolio-color",
+        "fontColor": "main-color"
     },
     "about": {
         "color": "about-color",

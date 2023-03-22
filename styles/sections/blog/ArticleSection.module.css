@@ -3,7 +3,6 @@
 
 .filterMenu {
     --filter-color: #B9B0A7;
-    margin: 2em 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
