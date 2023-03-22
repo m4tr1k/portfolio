@@ -41,6 +41,10 @@ h2 {
   font-size: clamp(2.25rem, 1.3333333rem + 3.333333vw, 3.215rem);
 }
 
+h3 {
+  font-size: clamp(1.875rem, 1.3rem + 3vw, 2.15rem);
+}
+
 a {
   text-decoration: none;
   cursor: pointer;

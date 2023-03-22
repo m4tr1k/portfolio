@@ -1,5 +1,9 @@
 .card {
     width: clamp(200px, 27%, 300px);
+    border: 3px solid var(--main-color);
+    gap: 1.5em;
+    align-items: baseline;
+    padding: 2em;
 }
 
 .description {

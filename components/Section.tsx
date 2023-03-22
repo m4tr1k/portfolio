@@ -7,6 +7,7 @@ type TitleProps = {
   title: string;
   position: "left" | "center";
   description?: string;
+  descriptionSpacing?: boolean;
   size?: "small" | "large";
 };
 
@@ -41,7 +42,11 @@ const Section = (props: Props) => {
             <p className={styles.title}>{props.titleProps.sectionTitle}</p>
             <TitleTag>{props.titleProps.title}</TitleTag>
             {props.titleProps.description ? (
-              <p className={styles.description}>
+              <p
+                className={`${styles.description} ${
+                  props.titleProps.descriptionSpacing ? styles.spacing : ""
+                }`}
+              >
                 {props.titleProps.description}
               </p>
             ) : undefined}

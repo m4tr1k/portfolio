@@ -12,3 +12,11 @@ type Article = {
   content: string;
   metadata: ArticleMetadata;
 };
+
+type Project = {
+  id: string;
+  title: string;
+  position: string;
+  image: string;
+  color: string;
+};

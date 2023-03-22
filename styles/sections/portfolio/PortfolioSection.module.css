@@ -1,5 +1,17 @@
 .portfolio-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 5em;
+}
+
+.soon {
+    text-align: center;
+    margin-top: 3em;
+}
+
+@media screen and (max-width: 1000px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        grid-gap: clamp(2em, 10vw, 4em);
+    }
 }

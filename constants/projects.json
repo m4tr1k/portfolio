@@ -1,0 +1,23 @@
+[
+    {
+        "id": "icbraga-website",
+        "title": "ICBraga Website",
+        "position": "Full Stack • SvelteKit • Website",
+        "image": "/projects/images/icbraga-website.png",
+        "color": "#6380ff"
+    },
+    {
+        "id": "spzn-app",
+        "title": "SPZN App",
+        "position": "Frontend • React Native • Mobile",
+        "image": "/projects/images/spzn.png",
+        "color": "#fc1515"
+    },
+    {
+        "id": "alavanca-app",
+        "title": "Alavanca App",
+        "position": "Frontend • React Native • Mobile",
+        "image": "/projects/images/alavanca.webp",
+        "color": "#8354d8"
+    }
+]
