@@ -1,18 +1,24 @@
 import PortfolioCard from "../../components/Card/PortfolioCard";
 import Section from "../../components/Section";
 import styles from "../../styles/sections/portfolio/PortfolioSection.module.css";
-import projects from "../../constants/projects.json";
+import { useTranslation } from "next-i18next";
 
 const PortfolioSection = () => {
+  const { t } = useTranslation("portfolio");
+
+  const projects = t("portfolioSection.projects", {
+    returnObjects: true,
+  }) as [];
+
   return (
     <Section
       id="portfolio"
       navbarSpace
       titleProps={{
         position: "left",
-        sectionTitle: "Portfolio",
-        title: "All My Work",
-        description: "Check all the projects I did as a freelancer",
+        sectionTitle: t("portfolioSection.sectionTitle"),
+        title: t("portfolioSection.title"),
+        description: t("portfolioSection.description") as string,
         descriptionSpacing: true,
       }}
     >
@@ -23,7 +29,7 @@ const PortfolioSection = () => {
           );
         })}
       </div>
-      <h3 className={styles.soon}>And Soon Your Project...</h3>
+      <h3 className={styles.soon}>{t("portfolioSection.soon")}</h3>
     </Section>
   );
 };

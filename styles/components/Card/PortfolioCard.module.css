@@ -35,6 +35,7 @@
     bottom: 2em;
     right: 3em;
     text-align: right;
+    padding-left: 2em;
 }
 
 .project-description p {

@@ -1,3 +1,33 @@
 {
-    "title": "O Meu Portfólio"
+    "title": "O Meu Portfólio",
+    "description": "Nesta página poderá encontrará os projetos que desenvolvi como desenvolvedor frontend. Pode explorar cada estudo de caso e ver o processo de pensamento por detrás de cada projeto.",
+    "portfolioSection": {
+        "sectionTitle": "Portfólio",
+        "title": "Os Meus Projetos",
+        "description": "Veja os projetos em que trabalhei e criei",
+        "projects": [
+            {
+                "id": "icbraga-website",
+                "title": "Website do ICBraga",
+                "position": "Full Stack • SvelteKit • Website",
+                "image": "/projects/images/icbraga-website.png",
+                "color": "#6380ff"
+            },
+            {
+                "id": "spzn-app",
+                "title": "Aplicação do SPZN",
+                "position": "Frontend • React Native • Aplicação Móvel",
+                "image": "/projects/images/spzn.png",
+                "color": "#fc1515"
+            },
+            {
+                "id": "alavanca-app",
+                "title": "Aplicação da Alavanca",
+                "position": "Frontend • React Native • Aplicação Móvel",
+                "image": "/projects/images/alavanca.webp",
+                "color": "#8354d8"
+            }
+        ],
+        "soon": "E em Breve o seu Projeto..."
+    }
 }

@@ -1,3 +1,33 @@
 {
-    "title": "My Portfolio Showcase"
+    "title": "My Portfolio Showcase",
+    "description": "In this page you will find the projects I did as a frontend software engineer. You can explore every case study, and see the thought process behind each project.",
+    "portfolioSection": {
+        "sectionTitle": "Portfolio",
+        "title": "My Work",
+        "description": "Check out the projects that I have worked on",
+        "projects": [
+            {
+                "id": "icbraga-website",
+                "title": "ICBraga Website",
+                "position": "Full Stack • SvelteKit • Website",
+                "image": "/projects/images/icbraga-website.png",
+                "color": "#6380ff"
+            },
+            {
+                "id": "spzn-app",
+                "title": "SPZN App",
+                "position": "Frontend • React Native • Mobile",
+                "image": "/projects/images/spzn.png",
+                "color": "#fc1515"
+            },
+            {
+                "id": "alavanca-app",
+                "title": "Alavanca App",
+                "position": "Frontend • React Native • Mobile",
+                "image": "/projects/images/alavanca.webp",
+                "color": "#8354d8"
+            }
+        ],
+        "soon": "And Soon Your Project..."
+    }
 }

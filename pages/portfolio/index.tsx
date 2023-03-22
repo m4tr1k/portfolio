@@ -12,10 +12,7 @@ const Portfolio: NextPage = () => {
     <div>
       <Head>
         <title>{`${t("title")} | Francisco Fernandes`}</title>
-        <meta
-          name="description"
-          content="In this page you will find all my projects as a frontend software engineer. You can explore every case study, and see the thought process behind each project."
-        />
+        <meta name="description" content={t("description") as string} />
       </Head>
       <PortfolioSection />
       <ContactSection />
