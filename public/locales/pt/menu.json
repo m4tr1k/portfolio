@@ -1,6 +1,16 @@
 {
-    "about": "Sobre Mim",
-    "portfolio": "Portfólio",
-    "blog": "Blog",
-    "contact": "Contactos"
+    "options": [
+        {
+            "name": "Sobre Mim",
+            "url": "about"
+        },
+        {
+            "name": "Portfólio",
+            "url": "portfolio"
+        },
+        {
+            "name": "Blog",
+            "url": "blog"
+        }
+    ]
 }

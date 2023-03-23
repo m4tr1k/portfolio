@@ -2,7 +2,7 @@
     "contacts": {
         "sectionTitle": "Get In Touch",
         "title": "Let's have a Chat",
-        "description": "Got an interesting idea and want to make it a reality? Just fill out the following form and we’ll keep in touch!\n\nAlternatively, you can reach out to me in one of the following social networks, or email me at contact@ffwork.space",
+        "description": "Got an interesting idea and want to make it a reality? Just fill out the following form and we’ll keep in touch!",
         "inputs": {
             "name": "Name",
             "email": "Email",

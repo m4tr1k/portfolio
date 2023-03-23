@@ -2,7 +2,7 @@
     "contacts": {
         "sectionTitle": "Entrar em Contacto",
         "title": "Vamos Conversar",
-        "description": "Tens uma ideia interessante e queres torná-la realidade? Basta preencheres o formulário e iremos manter contacto!\n\nComo alternativa, podes entrar em contato comigo através de uma das seguintes redes sociais ou enviar um e-mail para contact@ffwork.space",
+        "description": "Tens uma ideia interessante e queres torná-la realidade? Basta preencheres o formulário e iremos manter contacto!",
         "inputs": {
             "name": "Nome",
             "email": "E-mail",

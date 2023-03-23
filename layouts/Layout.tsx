@@ -3,6 +3,7 @@ import { PageTransitionContext } from "../stores";
 import Menu from "../components/Menu";
 import Navbar from "../components/Navbar";
 import PageTransition from "../components/PageTransition";
+import FooterSection from "../sections/common/FooterSection";
 
 type Props = {
   children: ReactNode;
@@ -24,6 +25,7 @@ export default function Layout(props: Props) {
         <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
         <Menu showMenu={openMenu} />
         {props.children}
+        <FooterSection />
       </main>
     </PageTransitionContext.Provider>
   );

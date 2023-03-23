@@ -7,14 +7,6 @@
     margin-bottom: .27em;
 }
 
-.contacts {
-    margin-top: 2.5em;
-}
-
-.contacts > :not(:last-child) {
-    margin-bottom: 1.35em;
-}
-
 .grid {
     display: grid;
     grid-template-columns: 40% 55%;

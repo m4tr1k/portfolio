@@ -9,22 +9,9 @@ type Props = {
 
 const Menu = (props: Props) => {
   const { t } = useTranslation("menu");
-  const { locale, asPath } = useRouter();
 
-  const menuList = [
-    {
-      name: t("about"),
-      url: "about",
-    },
-    {
-      name: t("portfolio"),
-      url: "portfolio",
-    },
-    {
-      name: t("blog"),
-      url: "blog",
-    },
-  ];
+  const { locale, asPath } = useRouter();
+  const menuList = t("options", { returnObjects: true }) as any[];
 
   return (
     <div

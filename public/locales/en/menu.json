@@ -1,6 +1,16 @@
 {
-    "about": "About",
-    "portfolio": "Portfolio",
-    "blog": "Blog",
-    "contact": "Contact"
+    "options": [
+        {
+            "name": "About",
+            "url": "about"
+        },
+        {
+            "name": "Portfolio",
+            "url": "portfolio"
+        },
+        {
+            "name": "Blog",
+            "url": "blog"
+        }
+    ]
 }

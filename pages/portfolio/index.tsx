@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import serverSideTranslations from "../../utils/serverSideTranslations";
 import Head from "next/head";
 import PortfolioSection from "../../sections/portfolio/PortfolioSection";
-import ContactSection from "../../sections/home/ContactSession";
+import ContactSection from "../../sections/common/ContactSession";
 
 const Portfolio: NextPage = () => {
   const { t } = useTranslation("portfolio");

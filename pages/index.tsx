@@ -4,10 +4,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import HomeSection from "../sections/home/HomeSection";
 import HighlightedProjectSection from "../sections/home/HighlightedProjectSection";
-import ContactSection from "../sections/home/ContactSession";
+import ContactSection from "../sections/common/ContactSession";
 import serverSideTranslations from "../utils/serverSideTranslations";
 import matter from "gray-matter";
-import { ReCaptchaProvider } from "next-recaptcha-v3";
 import { readMDXFile } from "../utils/readMDXFile";
 
 type Props = {
@@ -26,9 +25,7 @@ const Home: NextPage<Props> = (props) => {
       </Head>
       <HomeSection />
       <HighlightedProjectSection projects={props.highlightedProjects} />
-      <ReCaptchaProvider>
-        <ContactSection />
-      </ReCaptchaProvider>
+      <ContactSection />
     </div>
   );
 };

@@ -190,7 +190,7 @@ p {
 }
 
 .article-body {
-  padding: 0 clamp(20px, 8%, 50px);
+  padding: 0 clamp(20px, 8%, 50px) 3em;
 }
 
 .title-description h1, .title-description p {
@@ -237,7 +237,7 @@ p {
 
 @media screen and (min-width: 768px) {
   .article-body {
-    padding: 0 15%;
+    padding: 0 15% 6em;
   }
 
   .article-header {
@@ -251,12 +251,12 @@ p {
 
 @media screen and (min-width: 1200px) {
   .article-body {
-    padding: 0 20%;
+    padding: 0 20% 6em;
   }
 }
 
 @media screen and (min-width: 1400px) {
   .article-body {
-    padding: 0 25%;
+    padding: 0 25% 6em;
   }
 }
