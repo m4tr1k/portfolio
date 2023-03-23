@@ -20,7 +20,7 @@ const FooterSection = () => {
       </div>
       <div className={styles.content}>
         <div>
-          <p>Content</p>
+          <p>{t("content")}</p>
           <div className={styles.links}>
             {menuList.map((item, index) => {
               return (
