@@ -13,7 +13,6 @@
     -webkit-text-fill-color: var(--main-color);
 }
 
-
 .form textarea {
     resize: none;
     height: 200px;

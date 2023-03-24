@@ -39,9 +39,6 @@ const ContactButton = (props: Props) => {
 
   return (
     <div className={styles.contactButton}>
-      {props.status !== "idle" ? (
-        <div className={styles.sending}>{renderStatus()}</div>
-      ) : undefined}
       <button
         style={{
           color: `var(--main-color)`,
@@ -51,6 +48,9 @@ const ContactButton = (props: Props) => {
       >
         {t("contacts.inputs.submit")}
       </button>
+      {props.status !== "idle" ? (
+        <div className={styles.sending}>{renderStatus()}</div>
+      ) : undefined}
     </div>
   );
 };

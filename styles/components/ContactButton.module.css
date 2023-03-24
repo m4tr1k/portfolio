@@ -4,30 +4,25 @@
 }
 
 .contactButton {
-    gap: 20px;
-    justify-content: flex-end;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 1.5em;
 }
 
 .sending {
-    font-size: 15px;
+    font-size: 17px;
     gap: 10px;
 }
 
 .sending p {
-    font-size: 15px;
+    font-size: 17px;
+}
+
+.contactButton button {
+    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-    .contactButton {
-        flex-direction: column;
-    }
-
     .sending {
         order: 1;
-    }
-
-    .contactButton button {
-        width: 100%;
     }
 }

@@ -3,31 +3,40 @@ import ContactForm from "../../components/ContactForm";
 import Section from "../../components/Section";
 import styles from "../../styles/sections/common/ContactSection.module.css";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import Image from "next/image";
 
 const ContactSection = () => {
   const { t } = useTranslation("contact");
 
   return (
     <ReCaptchaProvider>
-      <Section
-        id="contact"
-        titleProps={{
-          title: t("contacts.title"),
-          sectionTitle: t("contacts.sectionTitle"),
-          position: "left",
-        }}
-        className={styles.contactSection}
-        animate={{ showClass: styles.show, hideClass: styles.hide }}
-      >
-        <div className={styles.grid}>
+      <div className={styles.grid}>
+        <Section
+          id="contact"
+          titleProps={{
+            title: t("contacts.title"),
+            sectionTitle: t("contacts.sectionTitle"),
+            position: "left",
+          }}
+          className={styles.contactSection}
+          animate={{ showClass: styles.show, hideClass: styles.hide }}
+        >
+          <p className={styles.description}>{t("contacts.description")}</p>
+          <ContactForm />
+        </Section>
+        <div className={styles.image}>
           <div>
-            <p className={styles.description}>{t("contacts.description")}</p>
-          </div>
-          <div className={styles.form}>
-            <ContactForm />
+            <div className={styles.overlay}></div>
+            <Image
+              alt="Contact Image"
+              src="/contact-image.jpg"
+              width={0}
+              height={0}
+              sizes="100vw"
+            />
           </div>
         </div>
-      </Section>
+      </div>
     </ReCaptchaProvider>
   );
 };

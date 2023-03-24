@@ -57,7 +57,7 @@ const ContactForm = () => {
           </div>
         );
       })}
-      <ContactButton status={status} />
+      <ContactButton status={"sending"} />
     </form>
   );
 };
