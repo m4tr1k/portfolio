@@ -2,8 +2,13 @@ import { useTranslation } from "next-i18next";
 import ServiceCard from "../../components/Card/ServiceCard";
 import Section from "../../components/Section";
 import styles from "../../styles/sections/about/ServicesSection.module.css";
+import Image from "next/image";
 
-const ServicesSection = () => {
+type Props = {
+  stack: string[];
+};
+
+const ServicesSection = (props: Props) => {
   const { t } = useTranslation("about");
   return (
     <Section
@@ -30,6 +35,22 @@ const ServicesSection = () => {
           icon="laptop-code"
           description={`${t("services.list.fullStack")}`}
         />
+      </div>
+      <div className={styles.stack}>
+        <p>Built using several technologies</p>
+        <div className={styles["stack-container"]}>
+          {props.stack.map((tech, index) => {
+            return (
+              <Image
+                alt="Tech Stack"
+                key={index}
+                src={"/stack/" + tech}
+                width={40}
+                height={40}
+              />
+            );
+          })}
+        </div>
       </div>
     </Section>
   );
