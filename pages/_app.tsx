@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           color: var(--${fontColor});
         }
       `}</style>
-      <Layout>
+      <Layout pathname={pathname}>
         <Component {...pageProps} />
       </Layout>
     </>

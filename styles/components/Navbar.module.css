@@ -9,12 +9,30 @@
     z-index: 4;
 }
 
+.openMenu {
+    position: fixed;
+}
+
+.errorPage h1 {
+    color: var(--secondary-color) !important;
+}
+
+.errorPage.openMenu h1 {
+    color: var(--main-color) !important;
+}
+
 /* ------ START HamburguerMenu ------ */
 
 .menuToggle {
     margin: 0;
     opacity: 0;
     z-index: 2;
+}
+
+.errorPage .hamburguerMenu,
+.errorPage .hamburguerMenu::after,
+.errorPage .hamburguerMenu::before {
+    background-color: var(--secondary-color);
 }
 
 .hamburguerMenu,
@@ -62,9 +80,11 @@
 .menuToggle:checked ~ .hamburguerMenu::after {
     margin-top: 0;
     transform: rotate(-45deg);
+    background-color: var(--main-color);
 }
 
 .menuToggle:checked ~ .hamburguerMenu::before {
     margin-top: 0;
     transform: rotate(45deg);
+    background-color: var(--main-color);
 }

@@ -16,7 +16,6 @@ const FooterSection = () => {
       <div className={styles.logo}>
         <Logo inHome={true} color="main" />
         <p className={styles.copyright}>Francisco Fernandes © {year}</p>
-        <p>contact@ffwork.space</p>
       </div>
       <div className={styles.content}>
         <div>

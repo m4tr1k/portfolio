@@ -1,0 +1,12 @@
+{
+    "404": {
+        "sectionTitle": "Não Encontrado",
+        "title": "Parece que esta página não existe...",
+        "description": "A página que está à procura pode ter sido removida, mudou de nome ou está temporariamente indisponível"
+    },
+    "500": {
+        "sectionTitle": "Erro Interno",
+        "title": "Oops! Algo correu mal...",
+        "description": "Espero poder arranjar isto o mais rapidamente possível. Por favor tente novamente mais tarde"
+    }
+}

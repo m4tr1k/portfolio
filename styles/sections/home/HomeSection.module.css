@@ -13,7 +13,7 @@
 .backgroundImage {
     transform: matrix(-1, 0, 0, 1, 0, 0);
     object-fit: cover;
-    object-position: clamp(26%, 1vw, 50%);
+    object-position: clamp(26%, 1vw, 45%);
 }
 
 .homeSection {
@@ -123,11 +123,5 @@
 
     .instagram {
         font-size: 32px;
-    }
-}
-
-@media screen and (min-width: 1020px) {
-    .backgroundImage{
-        object-position: unset;
     }
 }

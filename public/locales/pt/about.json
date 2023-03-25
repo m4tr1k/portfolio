@@ -4,7 +4,7 @@
     "aboutMe": {
         "sectionTitle": "Sobre",
         "title": "Quem sou?",
-        "description": "Sou Francisco Fernandes, um engenheiro de software frontend que coloca muito esforço em criar websites estitacamente apelativos e funcionais. Licenciado em Engenharia Informática no ISEP, possuo uma grande curiosidade em aprender novas coisas, e estou sempre à procura de novas formas de melhorar as minhas habilidades.\n\nTrabalhei/trabalho como freelancer para várias empresas, fazendo aplicações móveis e websites.",
+        "description": "Sou Francisco Fernandes, um engenheiro de software frontend que coloca muito esforço em criar websites estitacamente apelativos e funcionais. Licenciado em Engenharia Informática no ISEP (Instituto Superior de Engenharia do Porto), possuo uma grande curiosidade em aprender novas coisas, e estou sempre à procura de novas formas de melhorar as minhas habilidades.\n\nTrabalhei/trabalho como freelancer para várias empresas, fazendo aplicações móveis e websites.",
         "currentStatus": {
             "title": "Estado Atual",
             "position": "Estudante de Mestrado no ISEP e Freelancer",
@@ -17,7 +17,7 @@
     },
     "services": {
         "sectionTitle": "Serviços",
-        "title": "Converta a sua ideia em realidade",
+        "title": "Converta a sua Ideia em Realidade",
         "description": "Ofereço uma variedade de serviços incluindo",
         "list": {
             "mobile": "Desenvolvimento\nMobile",

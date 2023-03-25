@@ -1,9 +1,10 @@
 .footer {
-    background-color: #110F0E;
+    background-color: var(--secondary-color);
     color: var(--main-color);
     padding: 6em 10%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-top: auto;
 }
 
 .footer .logo .copyright {

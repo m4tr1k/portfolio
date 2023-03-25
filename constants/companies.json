@@ -1,25 +1,29 @@
 [
     {
         "name": "ICBraga",
-        "url": "/companies/icb.png",
+        "imageURL": "/companies/icb.png",
+        "url": "https://icbraga.pt/",
         "width": 127,
         "height": 100
     },
     {
         "name": "Goweb Agency",
-        "url": "/companies/goweb_agency.png",
+        "imageURL": "/companies/goweb_agency.png",
+        "url": "https://gowebagency.pt/en/",
         "width": 937,
         "height": 292
     },
     {
         "name": "RWVP Investimentos",
-        "url": "/companies/rwvp.png",
+        "imageURL": "/companies/rwvp.png",
+        "url": "https://rwvpinvestimentos.pt/",
         "width": 103,
         "height": 105
     },
     {
         "name": "ISEP",
-        "url": "/companies/isep.png",
+        "imageURL": "/companies/isep.png",
+        "url": "https://www.isep.ipp.pt/",
         "width": 3064,
         "height": 648
     }

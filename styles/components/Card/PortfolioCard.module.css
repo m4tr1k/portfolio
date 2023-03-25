@@ -16,6 +16,7 @@
     height: 100%;
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -24,7 +25,7 @@
 }
 
 .image {
-    width: 100%;
+    width: 95%;
     height: 85%;
     object-fit: contain;
     transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);

@@ -7,11 +7,14 @@ import FooterSection from "../sections/common/FooterSection";
 
 type Props = {
   children: ReactNode;
+  pathname: string;
 };
 
 export default function Layout(props: Props) {
   const [openMenu, setOpenMenu] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
+
+  const errorPage = props.pathname === "/404" || props.pathname === "/500";
 
   const toggleMenu = () => {
     let open = !openMenu;
@@ -22,11 +25,15 @@ export default function Layout(props: Props) {
     <PageTransitionContext.Provider value={{ pageLoading, setPageLoading }}>
       <PageTransition />
       <main id="main">
-        <Navbar openMenu={openMenu} toggleMenu={toggleMenu} />
+        <Navbar
+          errorPage={errorPage}
+          openMenu={openMenu}
+          toggleMenu={toggleMenu}
+        />
         <Menu showMenu={openMenu} />
         {props.children}
-        <FooterSection />
       </main>
+      <FooterSection />
     </PageTransitionContext.Provider>
   );
 }

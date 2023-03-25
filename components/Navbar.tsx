@@ -6,6 +6,7 @@ import Logo from "./Logo";
 type Props = {
   toggleMenu: () => void;
   openMenu: boolean;
+  errorPage: boolean;
 };
 
 const Navbar = (props: Props) => {
@@ -21,8 +22,9 @@ const Navbar = (props: Props) => {
 
   return (
     <nav
-      className={styles.navbar}
-      style={{ position: props.openMenu ? "fixed" : "absolute" }}
+      className={`${styles.navbar} ${props.openMenu ? styles.openMenu : ""} ${
+        props.errorPage ? styles.errorPage : ""
+      }`}
     >
       <Logo color="main" inHome={pathname === "/"} />
       <div>

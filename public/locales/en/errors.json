@@ -1,0 +1,12 @@
+{
+    "404": {
+        "sectionTitle": "Not Found",
+        "title": "Looks like this page does not exist...",
+        "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable"
+    },
+    "500": {
+        "sectionTitle": "Internal Server Error",
+        "title": "Oops! Something went wrong...",
+        "description": "I'll try to get it fixed as soon as possible. Please try again later"
+    }
+}

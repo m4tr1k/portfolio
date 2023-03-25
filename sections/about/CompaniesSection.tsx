@@ -21,14 +21,20 @@ const CompaniesSection = () => {
       <div className={styles.companies}>
         {companies.map((company, index) => {
           return (
-            <div className={styles.image} key={"logo-" + index}>
+            <a
+              href={company.url}
+              className={styles.image}
+              key={"logo-" + index}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image
-                src={company.url}
+                src={company.imageURL}
                 alt={"Logo " + company.name}
                 width={company.width}
                 height={company.height}
               />
-            </div>
+            </a>
           );
         })}
       </div>

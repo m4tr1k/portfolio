@@ -4,7 +4,8 @@
 
 :root {
   --main-color: #E1D8CF;
-  --secondary-color: #2E294E;
+  --secondary-color: #201F1E;
+  --transition-color: #2E294E;
   --menu-color: #605B56;
   --blog-color: #493843;
   --about-color: #30343F;
@@ -17,6 +18,12 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   margin: 0;
+}
+
+body, #__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body::-webkit-scrollbar, section::-webkit-scrollbar {
