@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Card from ".";
 import styles from "../../styles/components/Card/PortfolioCard.module.css";
 
@@ -15,7 +14,7 @@ const PortfolioCard = (props: Props) => {
       }}
       className={styles.card}
     >
-      <Link href={"/portfolio/" + props.projectInfo.id}>
+      <a href={props.projectInfo.url} target="_blank" rel="noreferrer">
         <div className={styles.overlay}>
           <div className={styles["project-description"]}>
             <p>{props.projectInfo.position}</p>
@@ -30,7 +29,7 @@ const PortfolioCard = (props: Props) => {
           sizes="100vw"
           className={styles.image}
         />
-      </Link>
+      </a>
     </Card>
   );
 };

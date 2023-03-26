@@ -19,4 +19,5 @@ type Project = {
   position: string;
   image: string;
   color: string;
+  url: string;
 };

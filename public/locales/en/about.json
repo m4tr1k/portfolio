@@ -23,6 +23,7 @@
             "mobile": "Mobile\nDevelopment",
             "frontend": "Frontend\nDevelopment",
             "fullStack": "Full Stack\nDevelopment"
-        }
+        },
+        "stack": "Built using several technologies"
     }
 }

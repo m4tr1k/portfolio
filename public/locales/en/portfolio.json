@@ -11,6 +11,7 @@
                 "title": "ICBraga Website",
                 "position": "Full Stack • SvelteKit • Website",
                 "image": "/projects/images/icbraga-website.png",
+                "url": "https://icbraga.pt",
                 "color": "#6380ff"
             },
             {
@@ -18,6 +19,7 @@
                 "title": "SPZN App",
                 "position": "Frontend • React Native • Mobile",
                 "image": "/projects/images/spzn.png",
+                "url": "https://www.spzn.pt/pt/noticias/go/app-spzn",
                 "color": "#fc1515"
             },
             {
@@ -25,6 +27,7 @@
                 "title": "Alavanca App",
                 "position": "Frontend • React Native • Mobile",
                 "image": "/projects/images/alavanca.webp",
+                "url": "https://gowebagency.pt/en/portfolio/app-alavanca-consulting-en/",
                 "color": "#8354d8"
             }
         ],

@@ -37,7 +37,7 @@ const ServicesSection = (props: Props) => {
         />
       </div>
       <div className={styles.stack}>
-        <p>Built using several technologies</p>
+        <p>{t("services.stack")}</p>
         <div className={styles["stack-container"]}>
           {props.stack.map((tech, index) => {
             return (
