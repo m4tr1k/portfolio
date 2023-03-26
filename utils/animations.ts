@@ -18,7 +18,7 @@ class Animations {
       this.main!.style.animation = "appear 0.4s ease-in-out";
       this.main!.style.opacity = "1";
       this.root!.style.overflow = "scroll";
-    }, 1000);
+    }, 500);
   };
 
   pageTransitionAnimationStart = (

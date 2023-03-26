@@ -2,11 +2,16 @@ import { useTranslation } from "next-i18next";
 import ContactForm from "../../components/ContactForm";
 import Section from "../../components/Section";
 import styles from "../../styles/sections/common/ContactSection.module.css";
-import { ReCaptchaProvider } from "next-recaptcha-v3";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+import { ReCaptchaProviderProps } from "next-recaptcha-v3";
 
 const ContactSection = () => {
   const { t } = useTranslation("contact");
+
+  const ReCaptchaProvider = dynamic(() =>
+    import("next-recaptcha-v3").then((mod) => mod.ReCaptchaProvider)
+  ) as React.FC<ReCaptchaProviderProps>;
 
   return (
     <ReCaptchaProvider>

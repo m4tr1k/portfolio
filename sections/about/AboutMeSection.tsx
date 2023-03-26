@@ -28,8 +28,8 @@ const AboutMeSection = () => {
         <Image
           src={"/about-image.png"}
           alt="About Francisco Fernandes"
-          width={1374}
-          height={1541}
+          width={841}
+          height={750}
         />
       </div>
     </div>
