@@ -22,6 +22,10 @@ const Home: NextPage<Props> = (props) => {
           name="description"
           content="My name is Francisco Fernandes, a frontend software engineer, and this is my web workspace. Explore my projects, read my blog, and get in touch with me."
         />
+        <meta
+          property="og:image"
+          content={process.env.NEXT_PUBLIC_HOST + "/homepage-og.jpg"}
+        />
       </Head>
       <HomeSection />
       <HighlightedProjectSection projects={props.highlightedProjects} />

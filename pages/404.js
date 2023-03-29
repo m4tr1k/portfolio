@@ -10,7 +10,7 @@ export default function Custom404() {
   return (
     <Fragment>
       <Head>
-        <title>{t("404.sectionTitle")} | Francisco Fernandes</title>
+        <title>{`${t("404.sectionTitle")} | Francisco Fernandes`}</title>
       </Head>
       <Section
         id="404-error"
