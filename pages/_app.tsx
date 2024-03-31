@@ -44,9 +44,14 @@ library.add(
 const titillium_web = Titillium_Web({
   weight: ["200", "600"],
   display: "swap",
+  subsets: ["latin"],
 });
-const cabin = Cabin({ display: "swap" });
-const courgette = Courgette({ weight: "400", display: "swap" });
+const cabin = Cabin({ display: "swap", subsets: ["latin"] });
+const courgette = Courgette({
+  weight: "400",
+  display: "swap",
+  subsets: ["latin"],
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
