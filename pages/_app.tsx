@@ -7,7 +7,7 @@ import {
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { Cabin, Titillium_Web, Courgette } from "@next/font/google";
+import { Cabin, Titillium_Web, Courgette } from "next/font/google";
 import {
   faCheck,
   faClock,
