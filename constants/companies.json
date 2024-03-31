@@ -1,5 +1,12 @@
 [
     {
+        "name": "mgm technology partners",
+        "imageURL": "/companies/mgm-technology-partners.png",
+        "url": "https://www.mgm-tp.com/",
+        "width": 1000,
+        "height": 3
+    },
+    {
         "name": "ICBraga",
         "imageURL": "/companies/icb.png",
         "url": "https://icbraga.pt/",
